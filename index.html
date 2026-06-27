@@ -160,7 +160,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 120px 120px 24px 24px; /* Classic architectural sanctuary arch design */
+            border-radius: 120px 120px 24px 24px;
             position: relative;
             z-index: 2;
             border: 6px solid var(--white);
@@ -313,7 +313,6 @@
             position: relative;
         }
 
-        /* Decorative Mockup Visual elements matching brand slide layout */
         .kore-mockup-frame {
             width: 100%;
             height: 100%;
@@ -339,7 +338,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50% 50% 0 0; /* matches logo visual arch */
+            border-radius: 50% 50% 0 0;
         }
 
         .kore-mockup-frame .brand-title {
@@ -348,6 +347,64 @@
             letter-spacing: 3px;
             color: var(--kore-plum);
             text-transform: uppercase;
+        }
+
+        /* ==========================================
+           NEW SLEEK HORIZONTAL SKILLS LAYOUT
+           ========================================== */
+        .skills-row-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #ECE7E1;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .skills-line-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(236, 231, 225, 0.5);
+            padding-bottom: 20px;
+        }
+
+        .skills-line-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .skills-line-item h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--kore-plum);
+            letter-spacing: 0.3px;
+        }
+
+        .skills-pill-track {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-pill-track span {
+            background-color: var(--kore-cream);
+            color: var(--text-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(82, 20, 58, 0.05);
+            transition: all 0.25s ease;
+        }
+
+        .skills-pill-track span:hover {
+            background-color: var(--kore-plum);
+            color: var(--kore-cream);
+            transform: translateY(-1px);
         }
 
         /* DYNAMIC HOVER CARDS (WRITING) */
@@ -427,14 +484,12 @@
             color: var(--kore-sage);
         }
 
-        /* ==========================================
-           INTERACTIVE 3D FLIP CARDS (CREDENTIALS)
-           ========================================== */
+        /* INTERACTIVE 3D FLIP CARDS */
         .credentials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
-            perspective: 1000px; /* Essential for 3D depth */
+            perspective: 1000px;
         }
 
         .flip-card {
@@ -452,7 +507,6 @@
             transform-style: preserve-3d;
         }
 
-        /* JavaScript toggles this class on click */
         .flip-card.flipped .flip-card-inner {
             transform: rotateY(180deg);
         }
@@ -473,20 +527,17 @@
             border: 1px solid #ECE7E1;
         }
 
-        /* Front side uses soft bright royal cream */
         .flip-card-front {
             background-color: var(--white);
             color: var(--kore-plum);
         }
 
-        /* Back side flips to solid KORE Plum */
         .flip-card-back {
             background-color: var(--kore-plum);
             color: var(--kore-cream);
             transform: rotateY(180deg);
         }
 
-        /* Flip-card Front Details */
         .badge-status {
             font-size: 0.75rem;
             font-weight: 700;
@@ -526,7 +577,6 @@
             font-weight: 600;
         }
 
-        /* Flip-card Back Details */
         .flip-card-back h4 {
             color: var(--kore-cream);
             font-size: 1.1rem;
@@ -542,45 +592,72 @@
             line-height: 1.5;
         }
 
-        /* SKILLS MATRIX */
-        .skills-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .skills-category h3 {
-            font-size: 1.35rem;
-            margin-bottom: 24px;
-            color: var(--kore-plum);
-            border-bottom: 1px solid #ECE7E1;
-            padding-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill-tags span {
-            background-color: var(--white);
+        /* ==========================================
+           NEW PREMIUM CONTACT CARD BLOCK
+           ========================================== */
+        .contact-card-box {
+            background: linear-gradient(145deg, var(--white) 0%, #FAF6F0 100%);
             border: 1px solid #ECE7E1;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 32px;
+            padding: 50px;
+            text-align: center;
             box-shadow: var(--shadow-elegant);
+            max-width: 750px;
+            margin: 0 auto;
         }
 
-        .skill-tags span:hover {
-            background-color: var(--kore-plum);
-            border-color: var(--kore-plum);
-            color: var(--kore-cream);
+        .contact-card-box p.contact-intro {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-details-cluster {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .contact-item-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--kore-plum);
+            font-family: var(--font-headings);
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 16px;
+            background: var(--white);
+            border: 1px solid rgba(82, 20, 58, 0.08);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 420px;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        .contact-item-link:hover {
+            border-color: var(--kore-sage);
+            background-color: var(--kore-cream);
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(82, 20, 58, 0.05);
+        }
+
+        .contact-item-link span.platform-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--kore-sage);
+            border-right: 1px solid #ECE7E1;
+            padding-right: 12px;
         }
 
         /* FOOTER */
@@ -613,6 +690,10 @@
                 border-left: none;
                 border-top: 1px solid #ECE7E1;
             }
+            .skills-line-item {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
         }
     </style>
 </head>
@@ -622,7 +703,6 @@
     <header class="hero-section">
         <div class="container hero-container">
             <div class="hero-image-wrapper">
-                <!-- Points directly to your repo image filename -->
                 <img src="726c0c83-222a-4b9a-8dc1-62105af8b393.jpeg" alt="Ayeesha Abubakar" class="hero-image">
                 <div class="purple-glow"></div>
             </div>
@@ -671,6 +751,40 @@
         </div>
     </section>
 
+    <!-- SECTION: REPOSITIONED & SLEEK SKILLS MATRIX -->
+    <section id="skills" class="section skills-section" style="background-color: rgba(82, 20, 58, 0.02); border-top: 1px solid #ECE7E1; border-bottom: 1px solid #ECE7E1;">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Skills Matrix</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="skills-row-layout">
+                <!-- Row 1 -->
+                <div class="skills-line-item">
+                    <h3>Data & Analytics</h3>
+                    <div class="skills-pill-track">
+                        <span>SQL</span><span>Python</span><span>Excel</span><span>Power BI & Tableau</span><span>Data Cleaning</span><span>Insights Generation</span>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="skills-line-item">
+                    <h3>Product & Strategy</h3>
+                    <div class="skills-pill-track">
+                        <span>Agile Methodology</span><span>Prompt Engineering</span><span>Business Scaling</span><span>Circular Economy Models</span>
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="skills-line-item">
+                    <h3>Impact & Expression</h3>
+                    <div class="skills-pill-track">
+                        <span>Data Storytelling</span><span>Public Speaking</span><span>Creative Writing</span><span>Remote Productivity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION: RESEARCH & WRITING SPOTLIGHT -->
     <section id="writing" class="section writing-section">
         <div class="container">
@@ -679,7 +793,6 @@
                 <div class="header-line"></div>
             </div>
             <div class="writing-grid">
-                <!-- Research Card with your live Google Doc link -->
                 <div class="dynamic-card research-card">
                     <div class="card-icon">📊</div>
                     <h3>Beyond the Job Slot Economy</h3>
@@ -688,7 +801,6 @@
                     <a href="https://docs.google.com/document/d/15Gb3J-lwGPaMbsak9H2yRNqdWWXOAp87/edit?usp=drivesdk&ouid=114458226518708901390&rtpof=true&sd=true" target="_blank" class="card-action-link">Read Research Paper &rarr;</a>
                 </div>
 
-                <!-- Story Card 1 -->
                 <div class="dynamic-card story-card">
                     <div class="card-icon">✍️</div>
                     <h3>Ashes in the wind</h3>
@@ -697,7 +809,6 @@
                     <a href="https://docs.google.com/document/d/1HBXsXn-xklYRunX3Dm7uC-XyiQuzSvrx/edit?usp=drivesdk&ouid=114458226518708901390&rtpof=true&sd=true" target="_blank" class="card-action-link">Read Short Story &rarr;</a>
                 </div>
 
-                <!-- Story Card 2 -->
                 <div class="dynamic-card story-card">
                     <div class="card-icon">✨</div>
                     <h3>Bright Constellations</h3>
@@ -710,7 +821,7 @@
     </section>
 
     <!-- SECTION: INTERACTIVE CREDENTIALS GRID -->
-    <section id="credentials" class="section credentials-section">
+    <section id="credentials" class="section credentials-section" style="background-color: rgba(115, 147, 117, 0.02); border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header">
                 <h2>Certifications & Foundations</h2>
@@ -719,8 +830,6 @@
             </div>
             
             <div class="credentials-grid">
-                
-                <!-- Card 1 -->
                 <div class="flip-card" onclick="toggleCardFlip(this)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -736,7 +845,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="flip-card" onclick="toggleCardFlip(this)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -752,7 +860,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="flip-card" onclick="toggleCardFlip(this)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -768,7 +875,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="flip-card" onclick="toggleCardFlip(this)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -784,7 +890,6 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="flip-card" onclick="toggleCardFlip(this)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -799,36 +904,29 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SECTION: SKILLS MATRIX -->
-    <section id="skills" class="section skills-section">
+    <!-- NEW SECTION: CONTACT ME & CONNECT SANCTUARY CARD -->
+    <section id="contact" class="section contact-section" style="border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header">
-                <h2>The Skills Matrix</h2>
+                <h2>Connect & Collaborate</h2>
                 <div class="header-line"></div>
             </div>
-            <div class="skills-wrapper">
-                <div class="skills-category">
-                    <h3>Data & Analytics</h3>
-                    <div class="skill-tags">
-                        <span>SQL</span><span>Python</span><span>Excel</span><span>Power BI & Tableau</span><span>Data Cleaning</span><span>Insights Generation</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Product & Strategy</h3>
-                    <div class="skill-tags">
-                        <span>Agile Methodology</span><span>Prompt Engineering</span><span>Business Scaling</span><span>Circular Economy Models</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Impact & Expression</h3>
-                    <div class="skill-tags">
-                        <span>Data Storytelling</span><span>Public Speaking</span><span>Creative Writing</span><span>Remote Productivity</span>
-                    </div>
+            
+            <div class="contact-card-box">
+                <p class="contact-intro">Whether you're looking to discuss data architecture models, scale innovative product foundations, or explore deep creative stories—I'd love to connect.</p>
+                <div class="contact-details-cluster">
+                    <!-- Direct Email Action Link -->
+                    <a href="mailto:Ayeeshkollere@gmail.com" class="contact-item-link">
+                        <span class="platform-label">Email</span> Ayeeshkollere@gmail.com
+                    </a>
+                    <!-- Requested LinkedIn Post URL -->
+                    <a href="https://www.linkedin.com/posts/aisha-abubakar-3631a0249_generationalshift-womenintech-genzdremers-activity-7476573271786790913-pjEM?utm_medium=ios_app&rcm=ACoAAD1uB_sBgoXDMrnQ8kaG1rIoye1k3wE0xto&utm_source=social_share_send&utm_campaign=copy_link" target="_blank" class="contact-item-link">
+                        <span class="platform-label">LinkedIn</span> View Professional Feature
+                    </a>
                 </div>
             </div>
         </div>
@@ -842,7 +940,6 @@
     </footer>
 
     <script>
-        // Interactive card flip function
         function toggleCardFlip(cardElement) {
             cardElement.classList.toggle('flipped');
         }
