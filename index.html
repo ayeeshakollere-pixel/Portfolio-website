@@ -3,10 +3,618 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for crisp modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ayeesha Abubakar | Portfolio</title>
+    <!-- Premium Google Fonts for the KORE Aesthetic (Elegant Serif + Clean Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           KORE "LIGHT ROYAL" BRAND IDENTITIES
+           ========================================== */
+        :root {
+            --kore-cream: #FAF8F5;       /* Warm linen background */
+            --kore-plum: #52143A;        /* Royal, deep plum main brand color */
+            --kore-sage: #739375;        /* Soft botanical green accent */
+            --kore-plum-light: #6E2351;  /* Soft plum hover states */
+            --kore-sage-light: #E9EFEA;  /* Soft tint for badges */
+            
+            --text-dark: #2D252A;        /* Premium dark plum-grey for readable body text */
+            --text-muted: #6B5E66;       /* Soft plum-grey for secondary notes */
+            --white: #FFFFFF;
+            
+            --font-headings: 'Lora', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --shadow-elegant: 0 10px 30px rgba(82, 20, 58, 0.04), 0 1px 3px rgba(82, 20, 58, 0.02);
+            --shadow-hover: 0 20px 40px rgba(82, 20, 58, 0.08), 0 1px 8px rgba(82, 20, 58, 0.04);
+        }
+
+        /* RESET & BASE GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--kore-cream);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-family: var(--font-headings);
+            color: var(--kore-plum);
+            font-weight: 500;
+        }
+
+        p {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .section-header .header-line {
+            width: 50px;
+            height: 3px;
+            background-color: var(--kore-sage);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* BRAND BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background-color: var(--kore-plum);
+            color: var(--kore-cream);
+            border: 1px solid var(--kore-plum);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--kore-plum-light);
+            border-color: var(--kore-plum-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(82, 20, 58, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--kore-plum);
+            border: 2px solid var(--kore-plum);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(82, 20, 58, 0.03);
+            transform: translateY(-2px);
+        }
+
+        /* HERO HEADER SECTION */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(180deg, rgba(247,244,239,0.7) 0%, var(--kore-cream) 100%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 320px;
+            height: 360px;
+            justify-self: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 120px 120px 24px 24px; /* Classic architectural sanctuary arch design */
+            position: relative;
+            z-index: 2;
+            border: 6px solid var(--white);
+            box-shadow: 0 15px 40px rgba(82, 20, 58, 0.08);
+        }
+
+        .purple-glow {
+            position: absolute;
+            top: 20px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--kore-sage);
+            border-radius: 120px 120px 24px 24px;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .badge-accent {
+            background: var(--kore-sage-light);
+            color: var(--kore-sage);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 24px;
+            border: 1px solid rgba(115, 147, 117, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.6rem;
+            line-height: 1.35;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 35px;
+        }
+
+        /* BRAND STATEMENT BREAK BLOCK */
+        .brand-statement {
+            background-color: var(--kore-plum);
+            color: var(--kore-cream);
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .brand-statement blockquote {
+            font-family: var(--font-headings);
+            font-size: 2rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .brand-statement cite {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--kore-sage);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* KORE FEATURED PROJECT */
+        .kore-card {
+            background-color: var(--white);
+            border-radius: 32px;
+            border: 1px solid #ECE7E1;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            overflow: hidden;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .kore-card-content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-tag {
+            color: var(--kore-sage);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .kore-card-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .kore-card-content p {
+            color: var(--text-dark);
+            margin-bottom: 35px;
+        }
+
+        .kore-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-card {
+            background-color: var(--kore-plum);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-card:hover {
+            background-color: var(--kore-plum-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-card.secondary {
+            background-color: transparent;
+            color: var(--kore-plum);
+            border: 1.5px solid var(--kore-plum);
+        }
+
+        .btn-card.secondary:hover {
+            background-color: rgba(82, 20, 58, 0.04);
+        }
+
+        .kore-visual {
+            background-color: #FAF8F5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid #ECE7E1;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* Decorative Mockup Visual elements matching brand slide layout */
+        .kore-mockup-frame {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(82, 20, 58, 0.02) 0%, rgba(82, 20, 58, 0.08) 100%);
+            border-radius: 20px;
+            border: 1px solid #E5DFD5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .kore-mockup-frame .logo-k {
+            font-family: var(--font-headings);
+            font-size: 4rem;
+            color: var(--kore-plum);
+            margin-bottom: 10px;
+            border: 2px solid var(--kore-plum);
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50% 50% 0 0; /* matches logo visual arch */
+        }
+
+        .kore-mockup-frame .brand-title {
+            font-family: var(--font-headings);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            color: var(--kore-plum);
+            text-transform: uppercase;
+        }
+
+        /* DYNAMIC HOVER CARDS (WRITING) */
+        .writing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .dynamic-card {
+            background-color: var(--white);
+            border: 1px solid #ECE7E1;
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .dynamic-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--kore-sage);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--kore-sage);
+        }
+
+        .dynamic-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            color: var(--kore-sage);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .dynamic-card p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .dedication-text {
+            font-family: var(--font-headings);
+            font-style: italic;
+            font-size: 0.95rem !important;
+            border-left: 2px solid var(--kore-sage);
+            padding-left: 14px;
+            color: var(--text-muted) !important;
+        }
+
+        .card-action-link {
+            color: var(--kore-plum);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: auto;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dynamic-card:hover .card-action-link {
+            color: var(--kore-sage);
+        }
+
+        /* ==========================================
+           INTERACTIVE 3D FLIP CARDS (CREDENTIALS)
+           ========================================== */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            perspective: 1000px; /* Essential for 3D depth */
+        }
+
+        .flip-card {
+            background-color: transparent;
+            height: 260px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* JavaScript toggles this class on click */
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow-elegant);
+            border: 1px solid #ECE7E1;
+        }
+
+        /* Front side uses soft bright royal cream */
+        .flip-card-front {
+            background-color: var(--white);
+            color: var(--kore-plum);
+        }
+
+        /* Back side flips to solid KORE Plum */
+        .flip-card-back {
+            background-color: var(--kore-plum);
+            color: var(--kore-cream);
+            transform: rotateY(180deg);
+        }
+
+        /* Flip-card Front Details */
+        .badge-status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background-color: #E2F0D9;
+            color: #4A7A3C;
+        }
+
+        .badge-status.working {
+            background-color: #FDF1D6;
+            color: #B45309;
+        }
+
+        .flip-card h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .flip-card-front p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .flip-indicator {
+            font-size: 0.75rem;
+            color: var(--kore-sage);
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Flip-card Back Details */
+        .flip-card-back h4 {
+            color: var(--kore-cream);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+            padding-bottom: 8px;
+            width: 100%;
+        }
+
+        .flip-card-back p {
+            color: rgba(250, 248, 245, 0.85);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* SKILLS MATRIX */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .skills-category h3 {
+            font-size: 1.35rem;
+            margin-bottom: 24px;
+            color: var(--kore-plum);
+            border-bottom: 1px solid #ECE7E1;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tags span {
+            background-color: var(--white);
+            border: 1px solid #ECE7E1;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .skill-tags span:hover {
+            background-color: var(--kore-plum);
+            border-color: var(--kore-plum);
+            color: var(--kore-cream);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 50px 0;
+            border-top: 1px solid #ECE7E1;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-image-wrapper {
+                order: -1;
+            }
+            .hero-cta-group {
+                display: flex;
+                justify-content: center;
+            }
+            .kore-card {
+                grid-template-columns: 1fr;
+            }
+            .kore-visual {
+                border-left: none;
+                border-top: 1px solid #ECE7E1;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -14,8 +622,8 @@
     <header class="hero-section">
         <div class="container hero-container">
             <div class="hero-image-wrapper">
-                <!-- Pointing directly to the exact filename in your repository -->
-                <img src="726c0c83-222a-4b9a-8dc1-62105af8b393.jpeg" alt="Profile Picture" class="hero-image">
+                <!-- Points directly to your repo image filename -->
+                <img src="726c0c83-222a-4b9a-8dc1-62105af8b393.jpeg" alt="Ayeesha Abubakar" class="hero-image">
                 <div class="purple-glow"></div>
             </div>
             <div class="hero-content">
@@ -30,6 +638,12 @@
         </div>
     </header>
 
+    <!-- BRAND QUOTE CALLOUT BREAK -->
+    <div class="brand-statement">
+        <blockquote>"We aren't just building an app; we are building the recovery system every single mother deserves."</blockquote>
+        <cite>— Abubakar Aisha Musa, Founder of KORE</cite>
+    </div>
+
     <!-- SECTION: FEATURED PROJECT (KORE) -->
     <section id="kore" class="section kore-section">
         <div class="container">
@@ -43,12 +657,15 @@
                     <h3>KORE — Postpartum Wellness App</h3>
                     <p>I am the sole founder of KORE. Building this postpartum wellness platform from scratch has allowed me to seamlessly blend my analytical skill set with hands-on project management, strategic design, and cross-functional tech development.</p>
                     <div class="kore-links">
-                        <a href="https://avia-kore.vercel.app/" target="_blank" class="btn btn-card">Launch Vercel Prototype</a>
-                        <a href="https://youtube.com/shorts/m2ilPyywVvM?si=rpWJ1Aa-5gWMSBfR" target="_blank" class="btn btn-card secondary">Watch YouTube Demo</a>
+                        <a href="https://avia-kore.vercel.app/" target="_blank" class="btn-card">Launch Vercel Prototype</a>
+                        <a href="https://youtube.com/shorts/m2ilPyywVvM?si=rpWJ1Aa-5gWMSBfR" target="_blank" class="btn-card secondary">Watch YouTube Demo</a>
                     </div>
                 </div>
                 <div class="kore-visual">
-                    <div class="kore-mockup-gradient"><span>KORE AI</span></div>
+                    <div class="kore-mockup-frame">
+                        <div class="logo-k">K</div>
+                        <div class="brand-title">KORE</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,34 +714,92 @@
         <div class="container">
             <div class="section-header">
                 <h2>Certifications & Foundations</h2>
+                <p style="color: var(--text-muted); text-align: center; margin-top: -10px; margin-bottom: 20px;">Click on any card to flip and view full credentials</p>
                 <div class="header-line"></div>
             </div>
+            
             <div class="credentials-grid">
-                <div class="light-up-badge">
-                    <div class="badge-status working">Currently Pursuing</div>
-                    <h4>Data Analytics</h4>
-                    <p>ALX Program</p>
+                
+                <!-- Card 1 -->
+                <div class="flip-card" onclick="toggleCardFlip(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="badge-status working">Ongoing</span>
+                            <h4>Data Analytics</h4>
+                            <p>ALX Program</p>
+                            <span class="flip-indicator">TAP TO FLIP ↻</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>ALX Training</h4>
+                            <p>Deep-dive program focusing on SQL databases, python automation, visualization strategies (Tableau), and business storytelling architectures.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="light-up-badge">
-                    <div class="badge-status">Completed</div>
-                    <h4>Data Analytics</h4>
-                    <p>NIYA</p>
+
+                <!-- Card 2 -->
+                <div class="flip-card" onclick="toggleCardFlip(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="badge-status">Completed</span>
+                            <h4>Data Analytics</h4>
+                            <p>NIYA</p>
+                            <span class="flip-indicator">TAP TO FLIP ↻</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>NIYA Analytics</h4>
+                            <p>Mastered data manipulation foundations, descriptive statistical analysis, clean querying processes, and actionable dashboard builds.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="light-up-badge">
-                    <div class="badge-status">Completed</div>
-                    <h4>Professional Foundations</h4>
-                    <p>ALX</p>
+
+                <!-- Card 3 -->
+                <div class="flip-card" onclick="toggleCardFlip(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="badge-status">Completed</span>
+                            <h4>Professional Foundations</h4>
+                            <p>ALX</p>
+                            <span class="flip-indicator">TAP TO FLIP ↻</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>ALX Foundations</h4>
+                            <p>Acquired institutional core skills covering remote collaboration models, complex problem solving, structured communications, and agile workflow ethics.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="light-up-badge">
-                    <div class="badge-status">Completed</div>
-                    <h4>Agile Project Management</h4>
-                    <p>HP Life</p>
+
+                <!-- Card 4 -->
+                <div class="flip-card" onclick="toggleCardFlip(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="badge-status">Completed</span>
+                            <h4>Agile Project Management</h4>
+                            <p>HP Life</p>
+                            <span class="flip-indicator">TAP TO FLIP ↻</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>HP Life Agile</h4>
+                            <p>Learned implementation of agile scrum boards, running quick sprint adjustments, team backlog tracking, and dynamic pivot setups.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="light-up-badge">
-                    <div class="badge-status">Completed</div>
-                    <h4>Circular Economy</h4>
-                    <p>Professional Specialization</p>
+
+                <!-- Card 5 -->
+                <div class="flip-card" onclick="toggleCardFlip(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="badge-status">Completed</span>
+                            <h4>Circular Economy</h4>
+                            <p>Specialization</p>
+                            <span class="flip-indicator">TAP TO FLIP ↻</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Circular Systems</h4>
+                            <p>Studied regenerative industrial loops, alternative sustainable product design models, waste reduction methodologies, and climate-centric scaling strategies.</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -166,7 +841,11 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Interactive card flip function
+        function toggleCardFlip(cardElement) {
+            cardElement.classList.toggle('flipped');
+        }
+    </script>
 </body>
 </html>
-  
