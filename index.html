@@ -428,10 +428,11 @@
     <section id="canonical-case-study" class="section canonical-section" style="border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Canonical: How I'd Approach Their FP&A</h2>
+                <h2>Canonical: Financial Analysis</h2>
                 <div class="header-line"></div>
-                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Why I understand their business model and why I'm ready for their Financial Analyst role</p>
+                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Reverse-engineering a private company's unit economics from public data</p>
             </div>
+
             <div class="kpi-row reveal">
                 <div class="kpi-card">
                     <div class="kpi-val">$292M</div>
@@ -450,43 +451,49 @@
                     <div class="kpi-label">Public-Cloud Linux on Ubuntu</div>
                 </div>
             </div>
+
             <div class="shell-dashboard-layout">
                 <div class="case-study-narrative reveal">
-                    <h3>Understanding Canonical's Business Model</h3>
-                    <p>Canonical doesn't make money from software — they make money from <strong>scale</strong>. Ubuntu is free. What they sell is commercial support, security updates, and managed services to companies running Ubuntu at enterprise scale. The question any financial analyst should ask: <strong>How do you forecast revenue when your unit economics change as your customer base changes?</strong></p>
-                    <h4>The Financial Challenge</h4>
-                    <p style="font-size: 0.95rem;">Canonical's revenue is growing at 19.3% CAGR with an 83% gross margin — that's world-class. But an FP&A analyst at Canonical needs to understand: What's driving that growth? Is it more customers? Bigger contracts? Or is unit economics improving? The answer changes everything about how you forecast quarterly and annual performance.</p>
-                    <h4>Where I Come In</h4>
-                    <p style="font-size: 0.95rem;">At Beesoft, I did exactly this work. I took complex project financials, broke them into unit economics (cost per project, revenue per project), and built models that showed leadership how individual deals added up to company performance. I created financial quotes that had to be realistic enough to close deals, but also profitable enough to matter. That's FP&A thinking.</p>
-                    <h4>What I'd Focus On at Canonical</h4>
+                    <h3>The Business Model</h3>
+                    <p>Canonical's revenue model is inverted: the product (Ubuntu) is free. The money comes from commercial support, security services, and managed infrastructure sold to enterprises running Ubuntu at scale.</p>
+
+                    <p>This creates a specific financial problem: <strong>unit economics that shift as you scale.</strong> A customer acquired at $10k might generate $50k lifetime value, but as you move upmarket to $100k+ contracts, the onboarding cost and support complexity changes. Forecasting accuracy requires understanding where each customer sits in that curve.</p>
+
+                    <h4>What the Numbers Show</h4>
+                    <p style="font-size: 0.95rem;">Revenue growing at 19.3% CAGR with 83% margins suggests two things: (1) the unit economics are working, and (2) they're getting better as they scale. But the inflection point matters. If growth is driven by bigger contracts, margin math changes. If it's more customers at same ACV, different story.</p>
+
+                    <p style="font-size: 0.95rem;">The real question isn't "is Canonical growing?" It's "what's the ratio of new-customer acquisition cost to their 3-year LTV?" That ratio determines how aggressively they can invest in sales, and what margin floor they need to hit to stay profitable.</p>
+
+                    <h4>The Analytical Framework</h4>
+                    <p style="font-size: 0.95rem;">To model Canonical's financial trajectory, you'd need to track:</p>
                     <ul>
-                        <li><strong>Unit Economics:</strong> How much does it cost to onboard a customer? How much revenue do they generate over their lifetime? As Canonical scales, how are these metrics changing? What's the impact on margins?</li>
-                        <li><strong>Forecasting Accuracy:</strong> You can't forecast revenue without understanding your sales pipeline. How many deals at what value? I'd build models that connect sales activity to financial outcomes.</li>
-                        <li><strong>Strategic Analysis:</strong> When Canonical considers a new product or service (security hardening, managed services), I'd analyze the financial impact: Can we hit margin targets? What's the customer acquisition cost? Is this worth doing?</li>
-                        <li><strong>Stakeholder Communication:</strong> At Beesoft, I presented financial analyses to executives who needed to make real decisions. At Canonical, I'd do the same — translating financial data into clear recommendations.</li>
+                        <li><strong>Cohort retention:</strong> Do 2022 customers renew at higher ACV in 2024?</li>
+                        <li><strong>Net revenue retention:</strong> How much do existing customers expand year-over-year?</li>
+                        <li><strong>Sales efficiency:</strong> Revenue per dollar spent on customer acquisition (Magic Number).</li>
+                        <li><strong>Product mix shift:</strong> Are they moving upmarket or staying flat?</li>
                     </ul>
-                    <h4>Why This Role Fits</h4>
-                    <p style="font-size: 0.95rem;">Canonical's job posting looks for someone who can "analyze unit economics, drivers of variance, and KPIs" — that's literally what I did at Beesoft. They want "financial modeling" — I built financial quotes and budgets. They want to "advise on critical financial and strategic decisions" — I supported executive decision-making every day.</p>
-                    <p style="font-size: 0.95rem;"><strong>I don't just understand Canonical's business model. I have the hands-on experience to do their FP&A work from day one.</strong></p>
+
                     <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" class="cute-pill-btn">
-                        View Full Market Pulse Analysis
+                        View Full Analysis Dashboard
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
                 </div>
+
                 <div class="spreadsheet-container reveal">
                     <div class="sheet-meta">
                         <div>
-                            <h4 style="margin: 0; color: var(--kore-plum);">Interactive Analysis Dashboard</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Built from public data — W3Techs, Stack Overflow 2025 &amp; UK Companies House</p>
+                            <h4 style="margin: 0; color: var(--kore-plum);">Interactive Dashboard</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Built from W3Techs, Stack Overflow 2025 &amp; Companies House data</p>
                         </div>
                         <span class="sheet-badge">Live Site</span>
                     </div>
+
                     <div class="iframe-wrapper" style="background-color: #1a1012;">
                         <iframe src="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" title="Canonical Market Pulse interactive analysis dashboard" loading="lazy"></iframe>
                     </div>
-                    <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:14px; font-size:0.85rem; font-weight:600; color:var(--kore-plum); text-decoration:none;">View the full analysis in a new tab &rarr;</a>
+                    <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:14px; font-size:0.85rem; font-weight:600; color:var(--kore-plum); text-decoration:none;">Open in new tab &rarr;</a>
                 </div>
             </div>
         </div>
