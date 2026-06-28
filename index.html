@@ -3,63 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ============================================================
-         PAGE META  (edit the values marked TODO for your live site)
-         ============================================================ -->
     <title>Ayeesha Abubakar | Data Analyst, Founder & Writer</title>
     <meta name="description" content="Ayeesha Abubakar — data analyst, founder of KORE (a postpartum wellness app), and writer. Turning messy data into clear stories and big ideas into reality.">
     <meta name="author" content="Ayeesha Abubakar">
-
-    <!-- TODO: replace with your live domain once deployed (e.g. https://ayeesha.com/) -->
     <link rel="canonical" href="https://your-domain.com/">
-
-    <!-- Social share cards (Open Graph + Twitter) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ayeesha Abubakar | Data Analyst, Founder & Writer">
     <meta property="og:description" content="Data analyst, founder of KORE, and writer. Turning messy data into clear stories.">
-    <!-- TODO: replace with your live domain -->
     <meta property="og:url" content="https://your-domain.com/">
-    <!-- TODO: add a share image (1200x630) and point this at it, e.g. https://your-domain.com/share.jpg -->
     <meta property="og:image" content="726c0c83-222a-4b9a-8dc1-62105af8b393.jpeg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ayeesha Abubakar | Data Analyst, Founder & Writer">
     <meta name="twitter:description" content="Data analyst, founder of KORE, and writer. Turning messy data into clear stories.">
-
-    <!-- Inline SVG favicon: plum monogram, no extra file needed -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2352143A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' fill='%23FAF8F5' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-
-    <!-- Premium Google Fonts for the KORE Aesthetic (Elegant Serif + Clean Modern Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
-        /* ==========================================
-           KORE "LIGHT ROYAL" BRAND IDENTITY
-           ========================================== */
         :root {
-            --kore-cream: #FAF8F5;       /* Warm linen background */
-            --kore-plum: #52143A;        /* Royal, deep plum main brand color */
-            --kore-sage: #739375;        /* Soft botanical green accent */
-            --kore-plum-light: #6E2351;  /* Soft plum hover states */
-            --kore-sage-light: #E9EFEA;  /* Soft tint for badges */
-
-            --text-dark: #2D252A;        /* Premium dark plum-grey for readable body text */
-            --text-muted: #6B5E66;       /* Soft plum-grey for secondary notes */
+            --kore-cream: #FAF8F5;
+            --kore-plum: #52143A;
+            --kore-sage: #739375;
+            --kore-plum-light: #6E2351;
+            --kore-sage-light: #E9EFEA;
+            --text-dark: #2D252A;
+            --text-muted: #6B5E66;
             --white: #FFFFFF;
-            --line: #ECE7E1;             /* Hairline border */
-
+            --line: #ECE7E1;
             --font-headings: 'Lora', serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
             --shadow-elegant: 0 10px 30px rgba(82, 20, 58, 0.04), 0 1px 3px rgba(82, 20, 58, 0.02);
             --shadow-hover: 0 20px 40px rgba(82, 20, 58, 0.08), 0 1px 8px rgba(82, 20, 58, 0.04);
             --nav-h: 72px;
         }
-
-        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html {
             scroll-behavior: smooth;
             scroll-padding-top: calc(var(--nav-h) + 16px);
@@ -68,482 +45,147 @@
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
         }
-
         body { line-height: 1.6; overflow-x: hidden; }
-
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
         section { padding: 100px 0; }
-
-        /* TYPOGRAPHY */
-        h1, h2, h3, h4 {
-            font-family: var(--font-headings);
-            color: var(--kore-plum);
-            font-weight: 500;
-        }
-
-        p {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
+        h1, h2, h3, h4 { font-family: var(--font-headings); color: var(--kore-plum); font-weight: 500; }
+        p { font-family: var(--font-body); color: var(--text-dark); font-size: 1.05rem; line-height: 1.7; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 2.25rem; margin-bottom: 12px; font-weight: 600; }
-        .section-header .header-line {
-            width: 50px; height: 3px;
-            background-color: var(--kore-sage);
-            margin: 0 auto; border-radius: 2px;
-        }
-
-        /* Accessible focus ring for keyboard users */
-        a:focus-visible,
-        button:focus-visible,
-        .flip-card:focus-visible {
-            outline: 3px solid var(--kore-sage);
-            outline-offset: 3px;
-            border-radius: 6px;
-        }
-
-        /* Skip link for screen-reader / keyboard users */
-        .skip-link {
-            position: absolute; left: -999px; top: 0; z-index: 200;
-            background: var(--kore-plum); color: var(--kore-cream);
-            padding: 12px 18px; border-radius: 0 0 10px 0;
-            font-family: var(--font-body); font-weight: 600; text-decoration: none;
-        }
+        .section-header .header-line { width: 50px; height: 3px; background-color: var(--kore-sage); margin: 0 auto; border-radius: 2px; }
+        a:focus-visible, button:focus-visible, .flip-card:focus-visible { outline: 3px solid var(--kore-sage); outline-offset: 3px; border-radius: 6px; }
+        .skip-link { position: absolute; left: -999px; top: 0; z-index: 200; background: var(--kore-plum); color: var(--kore-cream); padding: 12px 18px; border-radius: 0 0 10px 0; font-family: var(--font-body); font-weight: 600; text-decoration: none; }
         .skip-link:focus { left: 0; }
-
-        /* ==========================================
-           STICKY NAVIGATION
-           ========================================== */
-        .site-nav {
-            position: sticky; top: 0; z-index: 100;
-            height: var(--nav-h);
-            background: rgba(250, 248, 245, 0.82);
-            backdrop-filter: saturate(160%) blur(12px);
-            -webkit-backdrop-filter: saturate(160%) blur(12px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .site-nav.scrolled {
-            border-bottom-color: var(--line);
-            box-shadow: 0 4px 20px rgba(82, 20, 58, 0.03);
-        }
-        .nav-inner {
-            height: 100%;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-logo {
-            font-family: var(--font-headings);
-            font-size: 1.15rem; font-weight: 600;
-            color: var(--kore-plum); text-decoration: none;
-            letter-spacing: 0.3px; display: inline-flex; align-items: center; gap: 10px;
-        }
-        .nav-logo .mono {
-            width: 34px; height: 34px; border-radius: 50% 50% 8px 8px;
-            background: var(--kore-plum); color: var(--kore-cream);
-            display: inline-flex; align-items: center; justify-content: center;
-            font-size: 1rem; font-weight: 700;
-        }
+        .site-nav { position: sticky; top: 0; z-index: 100; height: var(--nav-h); background: rgba(250, 248, 245, 0.82); backdrop-filter: saturate(160%) blur(12px); -webkit-backdrop-filter: saturate(160%) blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .site-nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 4px 20px rgba(82, 20, 58, 0.03); }
+        .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-family: var(--font-headings); font-size: 1.15rem; font-weight: 600; color: var(--kore-plum); text-decoration: none; letter-spacing: 0.3px; display: inline-flex; align-items: center; gap: 10px; }
+        .nav-logo .mono { width: 34px; height: 34px; border-radius: 50% 50% 8px 8px; background: var(--kore-plum); color: var(--kore-cream); display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; }
         .nav-logo .mono-text { font-weight: 600; }
         .nav-logo .mono-text b { color: var(--kore-sage); font-weight: 600; }
-
-        .nav-links {
-            list-style: none; display: flex; align-items: center; gap: 4px;
-        }
-        .nav-links a {
-            font-family: var(--font-body);
-            font-size: 0.9rem; font-weight: 500;
-            color: var(--text-muted); text-decoration: none;
-            padding: 8px 14px; border-radius: 20px;
-            transition: color 0.2s ease, background-color 0.2s ease;
-        }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 4px; }
+        .nav-links a { font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; color: var(--text-muted); text-decoration: none; padding: 8px 14px; border-radius: 20px; transition: color 0.2s ease, background-color 0.2s ease; }
         .nav-links a:hover { color: var(--kore-plum); background: rgba(82, 20, 58, 0.04); }
         .nav-links a.active { color: var(--kore-plum); font-weight: 600; }
-        .nav-links a.nav-cta {
-            background: var(--kore-plum); color: var(--kore-cream);
-            padding: 9px 20px;
-        }
+        .nav-links a.nav-cta { background: var(--kore-plum); color: var(--kore-cream); padding: 9px 20px; }
         .nav-links a.nav-cta:hover { background: var(--kore-plum-light); color: var(--kore-cream); }
-
-        .nav-toggle {
-            display: none;
-            background: none; border: 1px solid var(--line);
-            width: 44px; height: 44px; border-radius: 12px;
-            cursor: pointer; align-items: center; justify-content: center;
-            color: var(--kore-plum);
-        }
+        .nav-toggle { display: none; background: none; border: 1px solid var(--line); width: 44px; height: 44px; border-radius: 12px; cursor: pointer; align-items: center; justify-content: center; color: var(--kore-plum); }
         .nav-toggle svg { width: 22px; height: 22px; }
-
-        /* BRAND BUTTONS */
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 14px 30px; border-radius: 30px;
-            font-weight: 600; font-size: 0.95rem; text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            font-family: var(--font-body);
-        }
-        .btn-primary {
-            background-color: var(--kore-plum); color: var(--kore-cream);
-            border: 1px solid var(--kore-plum);
-        }
-        .btn-primary:hover {
-            background-color: var(--kore-plum-light); border-color: var(--kore-plum-light);
-            transform: translateY(-2px); box-shadow: 0 8px 24px rgba(82, 20, 58, 0.15);
-        }
-        .btn-secondary {
-            background-color: transparent; color: var(--kore-plum);
-            border: 2px solid var(--kore-plum); margin-left: 15px;
-        }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 30px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); font-family: var(--font-body); }
+        .btn-primary { background-color: var(--kore-plum); color: var(--kore-cream); border: 1px solid var(--kore-plum); }
+        .btn-primary:hover { background-color: var(--kore-plum-light); border-color: var(--kore-plum-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(82, 20, 58, 0.15); }
+        .btn-secondary { background-color: transparent; color: var(--kore-plum); border: 2px solid var(--kore-plum); margin-left: 15px; }
         .btn-secondary:hover { background-color: rgba(82, 20, 58, 0.03); transform: translateY(-2px); }
-
-        /* HERO */
-        .hero-section {
-            min-height: calc(92vh - var(--nav-h));
-            display: flex; align-items: center; position: relative;
-            padding: 70px 0;
-            background: linear-gradient(180deg, rgba(247,244,239,0.7) 0%, var(--kore-cream) 100%);
-        }
-        .hero-container {
-            display: grid; grid-template-columns: 1fr 1.3fr;
-            gap: 80px; align-items: center;
-        }
-        .hero-image-wrapper {
-            position: relative; width: 320px; height: 360px; justify-self: center;
-        }
-        .hero-image {
-            width: 100%; height: 100%; object-fit: cover;
-            border-radius: 120px 120px 24px 24px; position: relative; z-index: 2;
-            border: 6px solid var(--white); box-shadow: 0 15px 40px rgba(82, 20, 58, 0.08);
-            background: var(--kore-sage-light);
-        }
-        /* Monogram fallback shown if the photo file is missing */
-        .hero-image-fallback {
-            position: absolute; inset: 0; z-index: 2;
-            border-radius: 120px 120px 24px 24px;
-            border: 6px solid var(--white);
-            box-shadow: 0 15px 40px rgba(82, 20, 58, 0.08);
-            background: linear-gradient(160deg, var(--kore-plum), var(--kore-plum-light));
-            display: none; align-items: center; justify-content: center;
-            font-family: var(--font-headings); color: var(--kore-cream);
-            font-size: 5rem; letter-spacing: 2px;
-        }
+        .hero-section { min-height: calc(92vh - var(--nav-h)); display: flex; align-items: center; position: relative; padding: 70px 0; background: linear-gradient(180deg, rgba(247,244,239,0.7) 0%, var(--kore-cream) 100%); }
+        .hero-container { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center; }
+        .hero-image-wrapper { position: relative; width: 320px; height: 360px; justify-self: center; }
+        .hero-image { width: 100%; height: 100%; object-fit: cover; border-radius: 120px 120px 24px 24px; position: relative; z-index: 2; border: 6px solid var(--white); box-shadow: 0 15px 40px rgba(82, 20, 58, 0.08); background: var(--kore-sage-light); }
+        .hero-image-fallback { position: absolute; inset: 0; z-index: 2; border-radius: 120px 120px 24px 24px; border: 6px solid var(--white); box-shadow: 0 15px 40px rgba(82, 20, 58, 0.08); background: linear-gradient(160deg, var(--kore-plum), var(--kore-plum-light)); display: none; align-items: center; justify-content: center; font-family: var(--font-headings); color: var(--kore-cream); font-size: 5rem; letter-spacing: 2px; }
         .hero-image-wrapper.fallback .hero-image { display: none; }
         .hero-image-wrapper.fallback .hero-image-fallback { display: flex; }
-
-        .purple-glow {
-            position: absolute; top: 20px; left: -15px;
-            width: 100%; height: 100%;
-            border: 2px solid var(--kore-sage);
-            border-radius: 120px 120px 24px 24px; z-index: 1; opacity: 0.5;
-        }
-        .badge-accent {
-            background: var(--kore-sage-light); color: var(--kore-sage);
-            padding: 6px 16px; border-radius: 30px;
-            font-size: 0.85rem; font-weight: 700; display: inline-block;
-            margin-bottom: 24px; border: 1px solid rgba(115, 147, 117, 0.2);
-            letter-spacing: 0.5px;
-        }
-        .hero-content h1 {
-            font-size: 2.6rem; line-height: 1.35; margin-bottom: 24px; font-weight: 500;
-        }
-        .hero-content p {
-            color: var(--text-dark); font-size: 1.05rem; margin-bottom: 35px;
-        }
-
-        /* BRAND QUOTE BREAK */
-        .brand-statement {
-            background-color: var(--kore-plum); color: var(--kore-cream);
-            padding: 80px 24px; text-align: center; position: relative;
-        }
-        .brand-statement blockquote {
-            font-family: var(--font-headings); font-size: 2rem; line-height: 1.5;
-            max-width: 800px; margin: 0 auto 20px auto; font-style: italic; font-weight: 400;
-        }
-        .brand-statement cite {
-            font-family: var(--font-body); font-size: 0.9rem; text-transform: uppercase;
-            letter-spacing: 2px; color: var(--kore-sage); font-style: normal; font-weight: 600;
-        }
-
-        /* KORE FEATURED PROJECT */
-        .kore-card {
-            background-color: var(--white); border-radius: 32px; border: 1px solid var(--line);
-            display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden;
-            box-shadow: var(--shadow-elegant); margin-bottom: 40px;
-        }
-        .kore-card-content {
-            padding: 60px; display: flex; flex-direction: column; justify-content: center;
-        }
-        .project-tag {
-            color: var(--kore-sage); font-size: 0.85rem; font-weight: 700;
-            letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;
-        }
+        .purple-glow { position: absolute; top: 20px; left: -15px; width: 100%; height: 100%; border: 2px solid var(--kore-sage); border-radius: 120px 120px 24px 24px; z-index: 1; opacity: 0.5; }
+        .badge-accent { background: var(--kore-sage-light); color: var(--kore-sage); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(115, 147, 117, 0.2); letter-spacing: 0.5px; }
+        .hero-content h1 { font-size: 2.6rem; line-height: 1.35; margin-bottom: 24px; font-weight: 500; }
+        .hero-content p { color: var(--text-dark); font-size: 1.05rem; margin-bottom: 35px; }
+        .brand-statement { background-color: var(--kore-plum); color: var(--kore-cream); padding: 80px 24px; text-align: center; position: relative; }
+        .brand-statement blockquote { font-family: var(--font-headings); font-size: 2rem; line-height: 1.5; max-width: 800px; margin: 0 auto 20px auto; font-style: italic; font-weight: 400; }
+        .brand-statement cite { font-family: var(--font-body); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--kore-sage); font-style: normal; font-weight: 600; }
+        .kore-card { background-color: var(--white); border-radius: 32px; border: 1px solid var(--line); display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; box-shadow: var(--shadow-elegant); margin-bottom: 40px; }
+        .kore-card-content { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .project-tag { color: var(--kore-sage); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
         .kore-card-content h3 { font-size: 2rem; margin-bottom: 20px; font-weight: 600; }
         .kore-card-content p { color: var(--text-dark); margin-bottom: 35px; }
         .kore-links { display: flex; gap: 15px; flex-wrap: wrap; }
-        .btn-card {
-            background-color: var(--kore-plum); color: var(--white);
-            padding: 12px 24px; border-radius: 30px; text-decoration: none;
-            font-weight: 600; font-size: 0.9rem; transition: all 0.3s;
-        }
+        .btn-card { background-color: var(--kore-plum); color: var(--white); padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
         .btn-card:hover { background-color: var(--kore-plum-light); transform: translateY(-2px); }
-        .btn-card.secondary {
-            background-color: transparent; color: var(--kore-plum); border: 1.5px solid var(--kore-plum);
-        }
+        .btn-card.secondary { background-color: transparent; color: var(--kore-plum); border: 1.5px solid var(--kore-plum); }
         .btn-card.secondary:hover { background-color: rgba(82, 20, 58, 0.04); }
-
-        .kore-visual {
-            background-color: #FAF8F5; display: flex; align-items: center; justify-content: center;
-            border-left: 1px solid var(--line); padding: 40px; position: relative;
-        }
-        .kore-mockup-frame {
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(82, 20, 58, 0.02) 0%, rgba(82, 20, 58, 0.08) 100%);
-            border-radius: 20px; border: 1px solid #E5DFD5;
-            display: flex; align-items: center; justify-content: center;
-            flex-direction: column; padding: 40px; text-align: center; min-height: 260px;
-        }
-        .kore-mockup-frame .logo-k {
-            font-family: var(--font-headings); font-size: 4rem; color: var(--kore-plum);
-            margin-bottom: 10px; border: 2px solid var(--kore-plum);
-            width: 90px; height: 90px; display: flex; align-items: center; justify-content: center;
-            border-radius: 50% 50% 0 0;
-        }
-        .kore-mockup-frame .brand-title {
-            font-family: var(--font-headings); font-size: 1.5rem; letter-spacing: 3px;
-            color: var(--kore-plum); text-transform: uppercase;
-        }
-
-        /* SHELL CASE STUDY */
-        .shell-dashboard-layout {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start;
-        }
-        .case-study-narrative {
-            background-color: var(--white); border: 1px solid var(--line); border-radius: 32px;
-            padding: 50px; box-shadow: var(--shadow-elegant);
-            display: flex; flex-direction: column; gap: 15px;
-        }
+        .kore-visual { background-color: #FAF8F5; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--line); padding: 40px; position: relative; }
+        .kore-mockup-frame { width: 100%; height: 100%; background: linear-gradient(135deg, rgba(82, 20, 58, 0.02) 0%, rgba(82, 20, 58, 0.08) 100%); border-radius: 20px; border: 1px solid #E5DFD5; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 40px; text-align: center; min-height: 260px; }
+        .kore-mockup-frame .logo-k { font-family: var(--font-headings); font-size: 4rem; color: var(--kore-plum); margin-bottom: 10px; border: 2px solid var(--kore-plum); width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; border-radius: 50% 50% 0 0; }
+        .kore-mockup-frame .brand-title { font-family: var(--font-headings); font-size: 1.5rem; letter-spacing: 3px; color: var(--kore-plum); text-transform: uppercase; }
+        .shell-dashboard-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+        .case-study-narrative { background-color: var(--white); border: 1px solid var(--line); border-radius: 32px; padding: 50px; box-shadow: var(--shadow-elegant); display: flex; flex-direction: column; gap: 15px; }
         .case-study-narrative h3 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 600; }
-        .case-study-narrative h4 {
-            font-family: var(--font-body); font-size: 1.1rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; color: var(--kore-sage);
-            margin-top: 20px; margin-bottom: 5px;
-        }
+        .case-study-narrative h4 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--kore-sage); margin-top: 20px; margin-bottom: 5px; }
         .case-study-narrative ul { margin-left: 20px; margin-bottom: 10px; }
-        .case-study-narrative li {
-            font-family: var(--font-body); font-size: 1rem; color: var(--text-dark); margin-bottom: 8px;
-        }
-
-        .kpi-row {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px; margin-bottom: 40px;
-        }
-        .kpi-card {
-            background-color: var(--white); border: 1px solid var(--line);
-            padding: 24px; border-radius: 20px; text-align: center;
-            transition: all 0.3s; box-shadow: var(--shadow-elegant);
-        }
+        .case-study-narrative li { font-family: var(--font-body); font-size: 1rem; color: var(--text-dark); margin-bottom: 8px; }
+        .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .kpi-card { background-color: var(--white); border: 1px solid var(--line); padding: 24px; border-radius: 20px; text-align: center; transition: all 0.3s; box-shadow: var(--shadow-elegant); }
         .kpi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-        .kpi-val {
-            font-family: var(--font-headings); font-size: 2.2rem; color: var(--kore-plum);
-            font-weight: 700; margin-bottom: 4px;
-        }
-        .kpi-label {
-            font-family: var(--font-body); font-size: 0.8rem; font-weight: 700;
-            text-transform: uppercase; color: var(--kore-sage); letter-spacing: 1px;
-        }
-
-        .spreadsheet-container {
-            background-color: var(--white); border: 1px solid var(--line); border-radius: 32px;
-            padding: 30px; box-shadow: var(--shadow-elegant); display: flex; flex-direction: column;
-        }
-        .sheet-meta {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--line);
-            gap: 16px;
-        }
-        .sheet-badge {
-            background-color: #E2F0D9; color: #4A7A3C; font-size: 0.75rem; font-weight: 700;
-            padding: 6px 14px; border-radius: 30px; letter-spacing: 0.5px; text-transform: uppercase;
-            white-space: nowrap;
-        }
-        .iframe-wrapper {
-            position: relative; width: 100%; height: 480px; border-radius: 16px;
-            overflow: hidden; border: 1px solid #E5DFD5; background-color: var(--kore-cream);
-        }
-        .iframe-wrapper iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
-        }
-
-        .cute-pill-btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 12px 24px; border-radius: 50px;
-            background-color: var(--kore-plum); color: var(--white);
-            font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
-            text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            align-self: flex-start; border: 1px solid var(--kore-plum);
-            margin-top: 15px; box-shadow: 0 4px 15px rgba(82, 20, 58, 0.08);
-        }
-        .cute-pill-btn:hover {
-            background-color: var(--kore-cream); color: var(--kore-plum); border-color: var(--kore-plum);
-            transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 24px rgba(82, 20, 58, 0.15);
-        }
+        .kpi-val { font-family: var(--font-headings); font-size: 2.2rem; color: var(--kore-plum); font-weight: 700; margin-bottom: 4px; }
+        .kpi-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--kore-sage); letter-spacing: 1px; }
+        .spreadsheet-container { background-color: var(--white); border: 1px solid var(--line); border-radius: 32px; padding: 30px; box-shadow: var(--shadow-elegant); display: flex; flex-direction: column; }
+        .sheet-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--line); gap: 16px; }
+        .sheet-badge { background-color: #E2F0D9; color: #4A7A3C; font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 30px; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+        .iframe-wrapper { position: relative; width: 100%; height: 480px; border-radius: 16px; overflow: hidden; border: 1px solid #E5DFD5; background-color: var(--kore-cream); }
+        .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .cute-pill-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 50px; background-color: var(--kore-plum); color: var(--white); font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); align-self: flex-start; border: 1px solid var(--kore-plum); margin-top: 15px; box-shadow: 0 4px 15px rgba(82, 20, 58, 0.08); }
+        .cute-pill-btn:hover { background-color: var(--kore-cream); color: var(--kore-plum); border-color: var(--kore-plum); transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 24px rgba(82, 20, 58, 0.15); }
         .cute-pill-btn svg { transition: transform 0.3s ease; }
         .cute-pill-btn:hover svg { transform: translate(3px, -3px); }
-
-        /* SKILLS */
-        .skills-row-layout {
-            display: flex; flex-direction: column; gap: 24px;
-            background-color: var(--white); padding: 40px; border-radius: 24px;
-            border: 1px solid var(--line); box-shadow: var(--shadow-elegant);
+        .experience-layout { display: grid; grid-template-columns: 1fr; gap: 28px; }
+        .experience-card { background-color: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-elegant); transition: all 0.3s ease; }
+        .experience-card:hover { border-color: var(--kore-sage); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+        .experience-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 20px; }
+        .experience-role h3 { font-size: 1.35rem; margin-bottom: 4px; font-weight: 600; color: var(--kore-plum); }
+        .experience-company { font-family: var(--font-body); color: var(--kore-sage); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; margin: 0; }
+        .experience-dates { font-family: var(--font-body); color: var(--text-muted); font-size: 0.9rem; font-weight: 500; margin: 0; white-space: nowrap; }
+        .experience-intro { color: var(--kore-sage); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .experience-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+        .experience-bullets li { font-family: var(--font-body); font-size: 0.95rem; line-height: 1.6; color: var(--text-dark); margin: 0; }
+        .experience-bullets strong { color: var(--kore-plum); }
+        @media (max-width: 900px) {
+            .experience-header { flex-direction: column; }
+            .experience-dates { white-space: normal; }
         }
-        .skills-line-item {
-            display: grid; grid-template-columns: 200px 1fr; align-items: center; gap: 20px;
-            border-bottom: 1px solid rgba(236, 231, 225, 0.5); padding-bottom: 20px;
-        }
+        .skills-row-layout { display: flex; flex-direction: column; gap: 24px; background-color: var(--white); padding: 40px; border-radius: 24px; border: 1px solid var(--line); box-shadow: var(--shadow-elegant); }
+        .skills-line-item { display: grid; grid-template-columns: 200px 1fr; align-items: center; gap: 20px; border-bottom: 1px solid rgba(236, 231, 225, 0.5); padding-bottom: 20px; }
         .skills-line-item:last-child { border-bottom: none; padding-bottom: 0; }
-        .skills-line-item h3 {
-            font-size: 1.15rem; font-weight: 600; color: var(--kore-plum); letter-spacing: 0.3px;
-        }
+        .skills-line-item h3 { font-size: 1.15rem; font-weight: 600; color: var(--kore-plum); letter-spacing: 0.3px; }
         .skills-pill-track { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skills-pill-track span {
-            background-color: var(--kore-cream); color: var(--text-dark);
-            padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;
-            border: 1px solid rgba(82, 20, 58, 0.05); transition: all 0.25s ease;
-        }
-        .skills-pill-track span:hover {
-            background-color: var(--kore-plum); color: var(--kore-cream); transform: translateY(-1px);
-        }
-
-        /* WRITING CARDS */
-        .writing-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
-        }
-        .dynamic-card {
-            background-color: var(--white); border: 1px solid var(--line); border-radius: 24px;
-            padding: 40px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative; display: flex; flex-direction: column; box-shadow: var(--shadow-elegant);
-        }
-        .dynamic-card:hover {
-            transform: translateY(-8px); border-color: var(--kore-sage); box-shadow: var(--shadow-hover);
-        }
+        .skills-pill-track span { background-color: var(--kore-cream); color: var(--text-dark); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; border: 1px solid rgba(82, 20, 58, 0.05); transition: all 0.25s ease; }
+        .skills-pill-track span:hover { background-color: var(--kore-plum); color: var(--kore-cream); transform: translateY(-1px); }
+        .writing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .dynamic-card { background-color: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 40px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; display: flex; flex-direction: column; box-shadow: var(--shadow-elegant); }
+        .dynamic-card:hover { transform: translateY(-8px); border-color: var(--kore-sage); box-shadow: var(--shadow-hover); }
         .card-icon { font-size: 1.8rem; margin-bottom: 24px; color: var(--kore-sage); }
         .dynamic-card h3 { font-size: 1.4rem; margin-bottom: 8px; font-weight: 600; }
-        .card-subtitle {
-            color: var(--kore-sage); font-size: 0.85rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
-        }
-        .dynamic-card p {
-            color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;
-        }
-        .dedication-text {
-            font-family: var(--font-headings); font-style: italic; font-size: 0.95rem !important;
-            border-left: 2px solid var(--kore-sage); padding-left: 14px; color: var(--text-muted) !important;
-        }
-        .card-action-link {
-            color: var(--kore-plum); text-decoration: none; font-weight: 700; font-size: 0.9rem;
-            margin-top: auto; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.5px;
-        }
+        .card-subtitle { color: var(--kore-sage); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .dynamic-card p { color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
+        .dedication-text { font-family: var(--font-headings); font-style: italic; font-size: 0.95rem !important; border-left: 2px solid var(--kore-sage); padding-left: 14px; color: var(--text-muted) !important; }
+        .card-action-link { color: var(--kore-plum); text-decoration: none; font-weight: 700; font-size: 0.9rem; margin-top: auto; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
         .dynamic-card:hover .card-action-link { color: var(--kore-sage); }
-
-        /* FLIP CARDS */
-        .credentials-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px; perspective: 1000px;
-        }
+        .credentials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; perspective: 1000px; }
         .flip-card { background-color: transparent; height: 260px; cursor: pointer; }
-        .flip-card-inner {
-            position: relative; width: 100%; height: 100%; text-align: center;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform-style: preserve-3d;
-        }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform-style: preserve-3d; }
         .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back {
-            position: absolute; width: 100%; height: 100%;
-            -webkit-backface-visibility: hidden; backface-visibility: hidden;
-            border-radius: 20px; padding: 30px 20px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            box-shadow: var(--shadow-elegant); border: 1px solid var(--line);
-        }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 20px; padding: 30px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: var(--shadow-elegant); border: 1px solid var(--line); }
         .flip-card-front { background-color: var(--white); color: var(--kore-plum); }
-        .flip-card-back {
-            background-color: var(--kore-plum); color: var(--kore-cream); transform: rotateY(180deg);
-        }
-        .badge-status {
-            font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 15px; padding: 4px 12px; border-radius: 20px;
-            background-color: #E2F0D9; color: #4A7A3C;
-        }
+        .flip-card-back { background-color: var(--kore-plum); color: var(--kore-cream); transform: rotateY(180deg); }
+        .badge-status { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; padding: 4px 12px; border-radius: 20px; background-color: #E2F0D9; color: #4A7A3C; }
         .badge-status.working { background-color: #FDF1D6; color: #B45309; }
         .flip-card h4 { font-size: 1.15rem; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
-        .flip-card-front p {
-            font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;
-            letter-spacing: 1px; font-weight: 600;
-        }
+        .flip-card-front p { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
         .flip-indicator { font-size: 0.75rem; color: var(--kore-sage); margin-top: 15px; font-weight: 600; }
-        .flip-card-back h4 {
-            color: var(--kore-cream); font-size: 1.1rem; margin-bottom: 10px;
-            border-bottom: 1px solid rgba(250, 248, 245, 0.2); padding-bottom: 8px; width: 100%;
-        }
+        .flip-card-back h4 { color: var(--kore-cream); font-size: 1.1rem; margin-bottom: 10px; border-bottom: 1px solid rgba(250, 248, 245, 0.2); padding-bottom: 8px; width: 100%; }
         .flip-card-back p { color: rgba(250, 248, 245, 0.85); font-size: 0.85rem; line-height: 1.5; }
-
-        /* CONTACT */
-        .contact-card-box {
-            background: linear-gradient(145deg, var(--white) 0%, #FAF6F0 100%);
-            border: 1px solid var(--line); border-radius: 32px; padding: 50px;
-            text-align: center; box-shadow: var(--shadow-elegant); max-width: 750px; margin: 0 auto;
-        }
-        .contact-card-box p.contact-intro {
-            font-size: 1.1rem; color: var(--text-dark); margin-bottom: 30px;
-            max-width: 550px; margin-left: auto; margin-right: auto;
-        }
+        .contact-card-box { background: linear-gradient(145deg, var(--white) 0%, #FAF6F0 100%); border: 1px solid var(--line); border-radius: 32px; padding: 50px; text-align: center; box-shadow: var(--shadow-elegant); max-width: 750px; margin: 0 auto; }
+        .contact-card-box p.contact-intro { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto; }
         .contact-details-cluster { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-        .contact-item-link {
-            display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
-            color: var(--kore-plum); font-family: var(--font-headings); font-size: 1.3rem; font-weight: 500;
-            padding: 14px 24px; border-radius: 16px; background: var(--white);
-            border: 1px solid rgba(82, 20, 58, 0.08); transition: all 0.3s ease;
-            width: 100%; max-width: 440px; justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.01); word-break: break-word;
-        }
-        .contact-item-link:hover {
-            border-color: var(--kore-sage); background-color: var(--kore-cream);
-            transform: translateY(-2px); box-shadow: 0 8px 20px rgba(82, 20, 58, 0.05);
-        }
-        .contact-item-link span.platform-label {
-            font-family: var(--font-body); font-size: 0.8rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px; color: var(--kore-sage);
-            border-right: 1px solid var(--line); padding-right: 12px; white-space: nowrap;
-        }
-
-        /* FOOTER */
-        .footer {
-            padding: 50px 0; border-top: 1px solid var(--line); text-align: center;
-            color: var(--text-muted); font-size: 0.9rem;
-        }
+        .contact-item-link { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--kore-plum); font-family: var(--font-headings); font-size: 1.3rem; font-weight: 500; padding: 14px 24px; border-radius: 16px; background: var(--white); border: 1px solid rgba(82, 20, 58, 0.08); transition: all 0.3s ease; width: 100%; max-width: 440px; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.01); word-break: break-word; }
+        .contact-item-link:hover { border-color: var(--kore-sage); background-color: var(--kore-cream); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(82, 20, 58, 0.05); }
+        .contact-item-link span.platform-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--kore-sage); border-right: 1px solid var(--line); padding-right: 12px; white-space: nowrap; }
+        .footer { padding: 50px 0; border-top: 1px solid var(--line); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
         .footer a { color: var(--kore-plum); text-decoration: none; font-weight: 600; }
         .footer a:hover { color: var(--kore-sage); }
-
-        /* SCROLL REVEAL */
         .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.in { opacity: 1; transform: none; }
-
-        /* MOBILE MENU PANEL */
-        .mobile-menu {
-            display: none; position: fixed; inset: var(--nav-h) 0 auto 0; z-index: 99;
-            background: var(--kore-cream); border-bottom: 1px solid var(--line);
-            padding: 16px 24px 24px; box-shadow: 0 12px 30px rgba(82, 20, 58, 0.06);
-        }
+        .mobile-menu { display: none; position: fixed; inset: var(--nav-h) 0 auto 0; z-index: 99; background: var(--kore-cream); border-bottom: 1px solid var(--line); padding: 16px 24px 24px; box-shadow: 0 12px 30px rgba(82, 20, 58, 0.06); }
         .mobile-menu.open { display: block; }
         .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-        .mobile-menu a {
-            display: block; padding: 14px 12px; border-radius: 12px;
-            color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 1rem;
-        }
+        .mobile-menu a { display: block; padding: 14px 12px; border-radius: 12px; color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 1rem; }
         .mobile-menu a:hover { background: rgba(82, 20, 58, 0.04); color: var(--kore-plum); }
-
-        /* RESPONSIVENESS */
         @media (max-width: 900px) {
             section { padding: 72px 0; }
             .nav-links { display: none; }
@@ -564,13 +206,10 @@
             .contact-item-link { flex-direction: column; gap: 8px; font-size: 1.1rem; }
             .contact-item-link span.platform-label { border-right: none; padding-right: 0; }
         }
-
         @media (max-width: 420px) {
             .hero-image-wrapper { width: 260px; height: 300px; }
             .section-header h2 { font-size: 1.9rem; }
         }
-
-        /* Respect reduced-motion preferences */
         @media (prefers-reduced-motion: reduce) {
             * { scroll-behavior: auto !important; }
             .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -579,10 +218,7 @@
     </style>
 </head>
 <body id="top">
-
     <a href="#kore" class="skip-link">Skip to content</a>
-
-    <!-- ============ STICKY NAV ============ -->
     <nav class="site-nav" id="siteNav" aria-label="Primary">
         <div class="container nav-inner">
             <a href="#top" class="nav-logo" aria-label="Ayeesha Abubakar — home">
@@ -590,6 +226,7 @@
                 <span class="mono-text">Ayeesha <b>Abubakar</b></span>
             </a>
             <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#kore">KORE</a></li>
                 <li><a href="#shell-case-study">Shell</a></li>
                 <li><a href="#canonical-case-study">Canonical</a></li>
@@ -607,10 +244,9 @@
             </button>
         </div>
     </nav>
-
-    <!-- Mobile dropdown menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#kore">KORE</a></li>
             <li><a href="#shell-case-study">Shell Analysis</a></li>
             <li><a href="#canonical-case-study">Canonical Analysis</a></li>
@@ -620,51 +256,104 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
-
-    <!-- ============ HERO ============ -->
     <header class="hero-section">
         <div class="container hero-container">
             <div class="hero-image-wrapper" id="heroImageWrapper">
-                <img src="726c0c83-222a-4b9a-8dc1-62105af8b393.jpeg"
-                     alt="Portrait of Ayeesha Abubakar"
-                     class="hero-image"
-                     onerror="document.getElementById('heroImageWrapper').classList.add('fallback')">
+                <img src="726c0c83-222a-4b9a-8dc1-62105af8b393.jpeg" alt="Portrait of Ayeesha Abubakar" class="hero-image" onerror="document.getElementById('heroImageWrapper').classList.add('fallback')">
                 <div class="hero-image-fallback" aria-hidden="true">AA</div>
                 <div class="purple-glow"></div>
             </div>
             <div class="hero-content">
                 <span class="badge-accent">Data Analyst &amp; Founder</span>
-                <h1>I’m a data analyst, a founder, and a writer who thrives on turning big ideas into reality.</h1>
+                <h1>I'm a data analyst, a founder, and a writer who thrives on turning big ideas into reality.</h1>
                 <p>I earned my degree in Economics through an open university, graduating with a Second-Class Upper. That journey didn't just teach me how businesses and markets work—it built the deep self-discipline and organization it takes to be highly productive in a remote world. I love taking complex, messy data all the way from raw code and cleaning to beautiful, clear visualizations that help businesses scale.</p>
                 <div class="hero-cta-group">
-                    <a href="#kore" class="btn btn-primary">Explore KORE</a>
-                    <a href="#shell-case-study" class="btn btn-secondary">Shell Case Study</a>
+                    <a href="#experience" class="btn btn-primary">View My Experience</a>
+                    <a href="#kore" class="btn btn-secondary">See My Code</a>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- ============ BRAND QUOTE ============ -->
     <div class="brand-statement">
         <blockquote>"We aren't just building an app; we are building the recovery system every single mother deserves."</blockquote>
         <cite>— Abubakar Aisha Musa, Founder of KORE</cite>
     </div>
-
-    <!-- ============ FEATURED PROJECT (KORE) ============ -->
+    <section id="experience" class="section experience-section" style="background-color: rgba(115, 147, 117, 0.02); border-top: 1px solid #ECE7E1; border-bottom: 1px solid #ECE7E1;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Professional Journey</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="experience-layout reveal">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-role">
+                            <h3>Data Analyst &amp; Executive Assistant</h3>
+                            <p class="experience-company">Beesoft</p>
+                        </div>
+                        <p class="experience-dates">2021–2023 (Remote)</p>
+                    </div>
+                    <p class="experience-intro" style="color: var(--kore-sage); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">What I Actually Did</p>
+                    <ul class="experience-bullets">
+                        <li><strong>Built Financial Quotes for Projects:</strong> When clients wanted to implement new software systems, I analyzed what it would cost them. I looked at factors like project size, complexity, and timeline, then created detailed price estimates. This taught me how to think like a business — understanding what drives costs and value.</li>
+                        <li><strong>Tracked Money &amp; Budgets:</strong> I analyzed financial data using spreadsheets and databases to see where money was being spent. I built reports showing whether projects were staying on budget, what was costing more than expected, and why. These reports went directly to leadership.</li>
+                        <li><strong>Worked Directly with Executives:</strong> I wasn't just doing analysis in a corner. I managed executive schedules, prepared meeting materials, handled staff payroll, and made sure financial information got to decision-makers in a format they could actually use. This meant I saw how senior leaders think about money and strategy.</li>
+                        <li><strong>Closed Deals:</strong> I supported the sales process by preparing financial documentation, answering cost questions from clients, and coordinating between finance and sales teams to get deals across the line.</li>
+                    </ul>
+                    <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-muted);"><strong>Why this matters:</strong> I didn't just run numbers. I learned how to connect financial analysis to real business decisions. I understood that analysis only matters if leadership acts on it.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-role">
+                            <h3>Early Childhood Education Educator</h3>
+                            <p class="experience-company">Multi-site Preschool Programs</p>
+                        </div>
+                        <p class="experience-dates">2019–2021</p>
+                    </div>
+                    <p class="experience-intro" style="color: var(--kore-sage); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">What I Learned</p>
+                    <ul class="experience-bullets">
+                        <li><strong>Structured Thinking:</strong> Teaching young children isn't chaotic — it's deeply organized. Every activity has a purpose, every moment is planned. That discipline stays with me.</li>
+                        <li><strong>Clear Communication:</strong> I had to explain complex ideas simply. I documented everything (student progress, lessons, observations) so parents and other teachers understood. That's exactly what financial analysis needs — clarity, not jargon.</li>
+                        <li><strong>Reliability Matters:</strong> Kids depend on consistency. Teachers depend on colleagues showing up and doing the work well. I learned that credibility comes from doing what you say you'll do, every time.</li>
+                    </ul>
+                    <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-muted);"><strong>Why this matters:</strong> This job taught me that success isn't about being the smartest person in the room — it's about being dependable, clear, and focused on outcomes.</p>
+                </div>
+                <div class="experience-card" style="grid-column: 1/-1;">
+                    <div class="experience-header">
+                        <div class="experience-role">
+                            <h3>B.A. Economics (Second-Class Upper)</h3>
+                            <p class="experience-company">The Open University</p>
+                        </div>
+                        <p class="experience-dates">2020–2023 (Part-time, while working)</p>
+                    </div>
+                    <p class="experience-intro" style="color: var(--kore-sage); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Learning While Doing</p>
+                    <ul class="experience-bullets">
+                        <li><strong>Why Economics Matters:</strong> Economics taught me how to think about money, markets, and decisions at scale. It's not just theory — it's a framework for understanding why businesses do what they do. I can look at a company like Shell or Canonical and see the economic logic underneath.</li>
+                        <li><strong>Self-Taught Technical Skills:</strong> While studying, I taught myself SQL (how to get data from databases), Python (how to automate analysis), and Tableau (how to visualize findings). I didn't wait for someone to teach me — I learned what I needed.</li>
+                        <li><strong>Doing Both Simultaneously:</strong> Full-time work + university + building projects = I know how to manage time, prioritize, and stay focused when things get messy. That's valuable in any analytics role.</li>
+                    </ul>
+                    <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-muted);"><strong>Why this matters:</strong> I'm not just an analyst with a degree. I'm someone who actively learns, fills gaps in my own knowledge, and doesn't make excuses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="kore" class="section kore-section">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Featured Project</h2>
+                <h2>Featured Technical Project</h2>
                 <div class="header-line"></div>
+                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Full-stack product built with code published on GitHub</p>
             </div>
             <div class="kore-card reveal">
                 <div class="kore-card-content">
-                    <span class="project-tag">Founder-Led Project</span>
+                    <span class="project-tag">Founder-Led Product</span>
                     <h3>KORE — Postpartum Wellness App</h3>
-                    <p>I am the sole founder of KORE. Building this postpartum wellness platform from scratch has allowed me to seamlessly blend my analytical skill set with hands-on project management, strategic design, and cross-functional tech development.</p>
+                    <p>I am the sole founder and developer of KORE. I designed and built this postpartum wellness platform from scratch, blending analytical thinking with hands-on full-stack development. KORE demonstrates my ability to take a complex problem (maternal mental health and recovery), break it into data-driven product features, and ship working code.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px;"><strong>Why KORE matters:</strong> This is real technical work. It shows I can code, think about user needs, iterate on product, and deploy to production. It's not theory—it's built and live.</p>
                     <div class="kore-links">
-                        <a href="https://avia-kore.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Launch Vercel Prototype</a>
-                        <a href="https://youtube.com/shorts/m2ilPyywVvM?si=rpWJ1Aa-5gWMSBfR" target="_blank" rel="noopener noreferrer" class="btn-card secondary">Watch YouTube Demo</a>
+                        <a href="https://github.com/ayeeshakollere/kore" target="_blank" rel="noopener noreferrer" class="btn-card" style="background-color: #333; color: var(--white);">View Code on GitHub</a>
+                        <a href="https://avia-kore.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Launch Live Prototype</a>
+                        <a href="https://youtube.com/shorts/m2ilPyywVvM?si=rpWJ1Aa-5gWMSBfR" target="_blank" rel="noopener noreferrer" class="btn-card secondary">Watch Demo Video</a>
                     </div>
                 </div>
                 <div class="kore-visual">
@@ -676,15 +365,12 @@
             </div>
         </div>
     </section>
-
-    <!-- ============ SHELL CASE STUDY ============ -->
     <section id="shell-case-study" class="section shell-section" style="background-color: rgba(82, 20, 58, 0.01); border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Shell Energy Transition Analysis</h2>
                 <div class="header-line"></div>
             </div>
-
             <div class="kpi-row reveal">
                 <div class="kpi-card">
                     <div class="kpi-val">+336%</div>
@@ -703,26 +389,20 @@
                     <div class="kpi-label">Abatement Efficiency (tCO2e/$M)</div>
                 </div>
             </div>
-
             <div class="shell-dashboard-layout">
                 <div class="case-study-narrative reveal">
                     <h3>The Big Picture Summary</h3>
                     <p>I built this analytical dashboard to answer a very simple question: <strong>Is Shell getting their money's worth in emissions reductions for every dollar they spend on green transition assets?</strong></p>
-
                     <p>By connecting five years of raw financial capital records with physical environmental data, the numbers tell an incredibly clear, multi-chapter story about our energy transition landscape.</p>
-
                     <h4>1. Where the Money is Flowing</h4>
                     <p style="font-size: 0.95rem;">Shell is actively redirecting their financial resources. Their low-carbon spending grew from <strong>$1.1 Billion (15.4% of total budget)</strong> in 2021 to <strong>$4.8 Billion (27.7%)</strong> in 2025. This shows a massive acceleration of funds into renewables and green utility networks.</p>
-
                     <h4>2. The Catch: Decarbonization Gets Harder</h4>
                     <p style="font-size: 0.95rem;">Early efforts to reduce carbon were simple, fast, and relatively inexpensive (low-hanging fruit). In 2022, every million dollars spent cleared an impressive <strong>21,904 tonnes of carbon</strong>. By 2024, despite spending far more money, that efficiency fell by nearly 38% to <strong>13,437 tonnes per million</strong>. This tells us that going deeper into green infrastructure becomes progressively harder, more complex, and more expensive over time.</p>
-
                     <h4>Key Takeaways</h4>
                     <ul>
                         <li><strong>Green is a Journey:</strong> Moving away from high-carbon emissions is not a quick switch; it requires sustained, multi-cycle investments to keep progress moving.</li>
                         <li><strong>Smart Planning:</strong> To prevent wasting money, future capital expansion must prioritize projects that meet high abatement efficiency thresholds.</li>
                     </ul>
-
                     <a href="https://docs.google.com/spreadsheets/d/1091N7iup9iWBT5ylTxCfxEbFcm9kSds1gacyAPKpd78/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="cute-pill-btn">
                         Open Raw Sheets Workspace
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -730,7 +410,6 @@
                         </svg>
                     </a>
                 </div>
-
                 <div class="spreadsheet-container reveal">
                     <div class="sheet-meta">
                         <div>
@@ -739,26 +418,20 @@
                         </div>
                         <span class="sheet-badge">Live Document</span>
                     </div>
-
                     <div class="iframe-wrapper">
-                        <iframe src="https://docs.google.com/spreadsheets/d/1091N7iup9iWBT5ylTxCfxEbFcm9kSds1gacyAPKpd78/preview?rm=minimal"
-                                title="Shell energy transition analysis spreadsheet"
-                                loading="lazy"></iframe>
+                        <iframe src="https://docs.google.com/spreadsheets/d/1091N7iup9iWBT5ylTxCfxEbFcm9kSds1gacyAPKpd78/preview?rm=minimal" title="Shell energy transition analysis spreadsheet" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ============ CANONICAL CASE STUDY ============ -->
     <section id="canonical-case-study" class="section canonical-section" style="border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Canonical // Market Pulse</h2>
+                <h2>Canonical: How I'd Approach Their FP&A</h2>
                 <div class="header-line"></div>
-                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Reading a private company that files almost nothing — by tracking the signals that move before the money does.</p>
+                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Why I understand their business model and why I'm ready for their Financial Analyst role</p>
             </div>
-
             <div class="kpi-row reveal">
                 <div class="kpi-card">
                     <div class="kpi-val">$292M</div>
@@ -777,62 +450,53 @@
                     <div class="kpi-label">Public-Cloud Linux on Ubuntu</div>
                 </div>
             </div>
-
             <div class="shell-dashboard-layout">
                 <div class="case-study-narrative reveal">
-                    <h3>The Invisible Engine of the Web</h3>
-                    <p>Canonical, the company behind Ubuntu, is a private company with no ticker and almost no public financials. So I asked a harder question: <strong>how do you value a business you can't read off an income statement?</strong></p>
-
-                    <p>The answer is to track it where it actually lives — in the infrastructure layer of the internet — through three proxy signals that move before the money does, then validate them against the one UK filing that exists.</p>
-
-                    <h4>1. The Three-Step Flywheel</h4>
-                    <p style="font-size: 0.95rem;">Canonical turns free software into a high-margin business in a repeatable loop: <strong>win the developers</strong> by giving away a best-in-class product, <strong>standardize the cloud</strong> as AWS, Google, and Azure make Ubuntu their default, then <strong>sell to enterprise</strong> — converting free users into long-term, high-paying support and security contracts.</p>
-
-                    <h4>2. The Numbers Behind the Moat</h4>
-                    <p style="font-size: 0.95rem;">The signals validate the story. Ubuntu is the most-deployed named Linux distro on the web and powers <strong>over 60% of public-cloud Linux instances</strong> (~67,000 new instances daily). That adoption converts into <strong>$292M in FY2024 revenue</strong> — up from $205M in 2022 — at an <strong>83% gross margin</strong>. Profitable and accelerating, not buying growth.</p>
-
-                    <h4>Key Takeaways</h4>
+                    <h3>Understanding Canonical's Business Model</h3>
+                    <p>Canonical doesn't make money from software — they make money from <strong>scale</strong>. Ubuntu is free. What they sell is commercial support, security updates, and managed services to companies running Ubuntu at enterprise scale. The question any financial analyst should ask: <strong>How do you forecast revenue when your unit economics change as your customer base changes?</strong></p>
+                    <h4>The Financial Challenge</h4>
+                    <p style="font-size: 0.95rem;">Canonical's revenue is growing at 19.3% CAGR with an 83% gross margin — that's world-class. But an FP&A analyst at Canonical needs to understand: What's driving that growth? Is it more customers? Bigger contracts? Or is unit economics improving? The answer changes everything about how you forecast quarterly and annual performance.</p>
+                    <h4>Where I Come In</h4>
+                    <p style="font-size: 0.95rem;">At Beesoft, I did exactly this work. I took complex project financials, broke them into unit economics (cost per project, revenue per project), and built models that showed leadership how individual deals added up to company performance. I created financial quotes that had to be realistic enough to close deals, but also profitable enough to matter. That's FP&A thinking.</p>
+                    <h4>What I'd Focus On at Canonical</h4>
                     <ul>
-                        <li><strong>The Moat:</strong> Being the "default" choice in the cloud makes Canonical extraordinarily hard to displace — its value is structural, not financial-statement-deep.</li>
-                        <li><strong>The Watchpoint:</strong> Revenue is climbing, but new developer adoption is leveling off (Android edged past Ubuntu in personal use in 2025). The next chapter depends on staying relevant to the next generation of developers.</li>
+                        <li><strong>Unit Economics:</strong> How much does it cost to onboard a customer? How much revenue do they generate over their lifetime? As Canonical scales, how are these metrics changing? What's the impact on margins?</li>
+                        <li><strong>Forecasting Accuracy:</strong> You can't forecast revenue without understanding your sales pipeline. How many deals at what value? I'd build models that connect sales activity to financial outcomes.</li>
+                        <li><strong>Strategic Analysis:</strong> When Canonical considers a new product or service (security hardening, managed services), I'd analyze the financial impact: Can we hit margin targets? What's the customer acquisition cost? Is this worth doing?</li>
+                        <li><strong>Stakeholder Communication:</strong> At Beesoft, I presented financial analyses to executives who needed to make real decisions. At Canonical, I'd do the same — translating financial data into clear recommendations.</li>
                     </ul>
-
+                    <h4>Why This Role Fits</h4>
+                    <p style="font-size: 0.95rem;">Canonical's job posting looks for someone who can "analyze unit economics, drivers of variance, and KPIs" — that's literally what I did at Beesoft. They want "financial modeling" — I built financial quotes and budgets. They want to "advise on critical financial and strategic decisions" — I supported executive decision-making every day.</p>
+                    <p style="font-size: 0.95rem;"><strong>I don't just understand Canonical's business model. I have the hands-on experience to do their FP&A work from day one.</strong></p>
                     <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" class="cute-pill-btn">
-                        Open Live Market Pulse Dashboard
+                        View Full Market Pulse Analysis
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
                 </div>
-
                 <div class="spreadsheet-container reveal">
                     <div class="sheet-meta">
                         <div>
-                            <h4 style="margin: 0; color: var(--kore-plum);">Live Interactive Dashboard</h4>
+                            <h4 style="margin: 0; color: var(--kore-plum);">Interactive Analysis Dashboard</h4>
                             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Built from public data — W3Techs, Stack Overflow 2025 &amp; UK Companies House</p>
                         </div>
                         <span class="sheet-badge">Live Site</span>
                     </div>
-
                     <div class="iframe-wrapper" style="background-color: #1a1012;">
-                        <iframe src="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/"
-                                title="Canonical Market Pulse interactive analysis dashboard"
-                                loading="lazy"></iframe>
+                        <iframe src="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" title="Canonical Market Pulse interactive analysis dashboard" loading="lazy"></iframe>
                     </div>
                     <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:14px; font-size:0.85rem; font-weight:600; color:var(--kore-plum); text-decoration:none;">View the full analysis in a new tab &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ============ SKILLS ============ -->
     <section id="skills" class="section skills-section" style="background-color: rgba(82, 20, 58, 0.02); border-top: 1px solid #ECE7E1; border-bottom: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
                 <h2>The Skills Matrix</h2>
                 <div class="header-line"></div>
             </div>
-
             <div class="skills-row-layout reveal">
                 <div class="skills-line-item">
                     <h3>Data &amp; Analytics</h3>
@@ -855,8 +519,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ============ WRITING ============ -->
     <section id="writing" class="section writing-section">
         <div class="container">
             <div class="section-header reveal">
@@ -869,29 +531,25 @@
                     <h3>Beyond the Job Slot Economy</h3>
                     <p class="card-subtitle">Economic Society Research Paper</p>
                     <p>An in-depth, structured analysis investigating systemic employment architecture and modern labor market configurations.</p>
-                    <a href="https://docs.google.com/document/d/15Gb3J-lwGPaMbsak9H2yRNqdWWXOAp87/edit?usp=drivesdk&amp;ouid=114458226518708901390&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" class="card-action-link">Read Research Paper &rarr;</a>
+                    <a href="https://docs.google.com/document/d/15Gb3J-lwGPaMbsak9H2yRNqdWWXOAp87/edit?usp=drivesdk&ouid=114458226518708901390&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="card-action-link">Read Research Paper &rarr;</a>
                 </div>
-
                 <div class="dynamic-card story-card reveal">
                     <div class="card-icon">✍️</div>
                     <h3>Ashes in the Wind</h3>
                     <p class="card-subtitle">Commonwealth Short Story Prize Entry</p>
                     <p class="dedication-text">"To the birds of paradise we got the honor of witnessing. Your strength is beyond imaginable, your faith beyond shakable."</p>
-                    <a href="https://docs.google.com/document/d/1HBXsXn-xklYRunX3Dm7uC-XyiQuzSvrx/edit?usp=drivesdk&amp;ouid=114458226518708901390&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" class="card-action-link">Read Short Story &rarr;</a>
+                    <a href="https://docs.google.com/document/d/1HBXsXn-xklYRunX3Dm7uC-XyiQuzSvrx/edit?usp=drivesdk&ouid=114458226518708901390&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="card-action-link">Read Short Story &rarr;</a>
                 </div>
-
                 <div class="dynamic-card story-card reveal">
                     <div class="card-icon">✨</div>
                     <h3>Bright Constellations</h3>
                     <p class="card-subtitle">Creative Narrative Piece</p>
                     <p class="dedication-text">"To the girls who were told to be quiet, to be grateful, to stay small. You are a constellation becoming. You are light. You are vast. You are seen."</p>
-                    <a href="https://docs.google.com/document/d/1jBbmKqLlGr4HLp6Owa9rT9CHVnfaklB2/edit?usp=drivesdk&amp;ouid=114458226518708901390&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" class="card-action-link">Read Piece &rarr;</a>
+                    <a href="https://docs.google.com/document/d/1jBbmKqLlGr4HLp6Owa9rT9CHVnfaklB2/edit?usp=drivesdk&ouid=114458226518708901390&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="card-action-link">Read Piece &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ============ CREDENTIALS ============ -->
     <section id="credentials" class="section credentials-section" style="background-color: rgba(115, 147, 117, 0.02); border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
@@ -899,7 +557,6 @@
                 <p style="color: var(--text-muted); text-align: center; margin-top: -10px; margin-bottom: 20px;">Tap or click any card to flip and view full credentials</p>
                 <div class="header-line"></div>
             </div>
-
             <div class="credentials-grid reveal">
                 <div class="flip-card" tabindex="0" role="button" aria-label="Data Analytics, ALX Program. Activate to view details.">
                     <div class="flip-card-inner">
@@ -915,7 +572,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flip-card" tabindex="0" role="button" aria-label="Data Analytics, NIYA. Activate to view details.">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -930,7 +586,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flip-card" tabindex="0" role="button" aria-label="Professional Foundations, ALX. Activate to view details.">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -945,7 +600,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flip-card" tabindex="0" role="button" aria-label="Agile Project Management, HP Life. Activate to view details.">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -960,7 +614,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flip-card" tabindex="0" role="button" aria-label="Circular Economy Specialization. Activate to view details.">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -978,41 +631,32 @@
             </div>
         </div>
     </section>
-
-    <!-- ============ CONTACT ============ -->
     <section id="contact" class="section contact-section" style="border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Connect &amp; Collaborate</h2>
                 <div class="header-line"></div>
             </div>
-
             <div class="contact-card-box reveal">
                 <p class="contact-intro">Whether you're looking to discuss data architecture models, scale innovative product foundations, or explore deep creative stories—I'd love to connect.</p>
                 <div class="contact-details-cluster">
                     <a href="mailto:Ayeeshkollere@gmail.com" class="contact-item-link">
                         <span class="platform-label">Email</span> Ayeeshkollere@gmail.com
                     </a>
-                    <a href="https://www.linkedin.com/posts/aisha-abubakar-3631a0249_generationalshift-womenintech-genzdremers-activity-7476573271786790913-pjEM?utm_medium=ios_app&amp;rcm=ACoAAD1uB_sBgoXDMrnQ8kaG1rIoye1k3wE0xto&amp;utm_source=social_share_send&amp;utm_campaign=copy_link" target="_blank" rel="noopener noreferrer" class="contact-item-link">
+                    <a href="https://www.linkedin.com/posts/aisha-abubakar-3631a0249_generationalshift-womenintech-genzdremers-activity-7476573271786790913-pjEM?utm_medium=ios_app&rcm=ACoAAD1uB_sBgoXDMrnQ8kaG1rIoye1k3wE0xto&utm_source=social_share_send&utm_campaign=copy_link" target="_blank" rel="noopener noreferrer" class="contact-item-link">
                         <span class="platform-label">LinkedIn</span> View Professional Feature
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="container">
             <p>&copy; <span id="year">2026</span> Ayeesha Abubakar. Built with purpose using KORE Plum. &middot; <a href="#top">Back to top ↑</a></p>
         </div>
     </footer>
-
     <script>
-        // Current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Flip cards: click + keyboard (Enter / Space)
         document.querySelectorAll('.flip-card').forEach(function (card) {
             function flip() { card.classList.toggle('flipped'); }
             card.addEventListener('click', flip);
@@ -1020,14 +664,10 @@
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
             });
         });
-
-        // Nav: shadow on scroll
         var nav = document.getElementById('siteNav');
         window.addEventListener('scroll', function () {
             nav.classList.toggle('scrolled', window.scrollY > 12);
         }, { passive: true });
-
-        // Mobile menu toggle
         var toggle = document.getElementById('navToggle');
         var menu = document.getElementById('mobileMenu');
         toggle.addEventListener('click', function () {
@@ -1042,8 +682,6 @@
                 toggle.setAttribute('aria-label', 'Open menu');
             });
         });
-
-        // Scroll-reveal
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if ('IntersectionObserver' in window && !reduceMotion) {
             var io = new IntersectionObserver(function (entries) {
@@ -1058,8 +696,6 @@
         } else {
             document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
         }
-
-        // Active-section highlight in nav
         var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
         var sections = navLinks
             .map(function (a) { return document.querySelector(a.getAttribute('href')); })
