@@ -189,6 +189,7 @@
         .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
         .mobile-menu a { display: block; padding: 14px 12px; border-radius: 12px; color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 1rem; }
         .mobile-menu a:hover { background: rgba(82, 20, 58, 0.04); color: var(--kore-plum); }
+        .button-cluster { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
         @media (max-width: 900px) {
             section { padding: 72px 0; }
             .nav-links { display: none; }
@@ -232,6 +233,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#kore">KORE</a></li>
                 <li><a href="#shell-case-study">Shell</a></li>
+                <li><a href="#lending-club-case-study">Lending Club</a></li>
                 <li><a href="#canonical-case-study">Canonical</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#writing">Writing</a></li>
@@ -252,6 +254,7 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#kore">KORE</a></li>
             <li><a href="#shell-case-study">Shell Analysis</a></li>
+            <li><a href="#lending-club-case-study">Lending Club Analysis</a></li>
             <li><a href="#canonical-case-study">Canonical Analysis</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#writing">Writing</a></li>
@@ -450,72 +453,162 @@
             </div>
         </div>
     </section>
-    <section id="canonical-case-study" class="section canonical-section" style="border-top: 1px solid #ECE7E1;">
+    <section id="lending-club-case-study" class="section lending-section" style="border-top: 1px solid #ECE7E1;">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Canonical: Reading a Private Company</h2>
+                <h2>Lending Club: Credit Risk & Default Patterns</h2>
                 <div class="header-line"></div>
-                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Understanding business model and growth from public signals when there's no income statement</p>
+                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Understanding who defaults and why using BigQuery and statistical analysis</p>
             </div>
 
             <div class="kpi-row reveal">
                 <div class="kpi-card">
-                    <div class="kpi-val">$292M</div>
-                    <div class="kpi-label">FY2024 Revenue (19.3% Annual Growth)</div>
+                    <div class="kpi-val">250K+</div>
+                    <div class="kpi-label">Loans Analyzed (2007–2023)</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">83%</div>
-                    <div class="kpi-label">Gross Margin (Revenue After Costs)</div>
+                    <div class="kpi-val">14.2%</div>
+                    <div class="kpi-label">Overall Default Rate</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">27.8%</div>
-                    <div class="kpi-label">Developers Using Ubuntu (Rank: #1)</div>
+                    <div class="kpi-val">$25B+</div>
+                    <div class="kpi-label">Total Capital Originated</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">&gt;60%</div>
-                    <div class="kpi-label">Public Cloud Servers Running Ubuntu</div>
+                    <div class="kpi-val">6+</div>
+                    <div class="kpi-label">Predictive Factors Identified</div>
                 </div>
             </div>
 
             <div class="case-study-layout">
                 <div class="case-study-narrative reveal">
-                    <h3>The Challenge</h3>
-                    <p>Canonical is privately owned. No quarterly earnings calls. No stock analyst reports. Normal due diligence doesn't work.</p>
-                    <p><strong>So I traced growth backward</strong> using three independent public signals: developer adoption (what builders choose), cloud market share (where Ubuntu runs), and the one real financial filing available (UK Companies House). These three signals form a funnel that tells the complete story.</p>
+                    <h3>What I Investigated</h3>
+                    <p>Lending Club is a peer-to-peer lending platform. They've originated $25+ billion in loans since 2007. But not all loans get repaid. Some people default. The question: <strong>Can I predict who will default before they get the loan?</strong></p>
 
-                    <h3 style="margin-top: 30px;">The Funnel Story</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 16px; font-style: italic;">Developers choose Ubuntu free → it becomes the default in cloud → organizations pay for enterprise support</p>
-                    
-                    <div class="insight-box">
-                        <strong>Developers (Top of Funnel):</strong> 27.8% of developers use Ubuntu—the #1 Linux choice. But growth has stopped. It's up only 0.1% year-over-year. And for the first time, Android just surpassed Ubuntu in personal use. This is the leading indicator. Developers choose tools 2–3 years before organizations buy support contracts. Flat developer adoption today = enterprise saturation 24 months from now.
-                    </div>
+                    <h4 style="margin-top: 24px;">The Data Science Part</h4>
+                    <p style="font-size: 0.95rem;">I pulled 250,000+ loan records from BigQuery (a Google database tool). For each loan, I looked at: credit score, income, loan amount, employment history, how many accounts the person has open, and whether they've been late before.</p>
+
+                    <p style="font-size: 0.95rem;">Then I built a statistical model to see which factors actually predict default. I used cohort analysis—grouping people by similar characteristics and watching how many defaulted in each group.</p>
 
                     <div class="insight-box">
-                        <strong>Cloud (Middle of Funnel):</strong> >60% of public-cloud Linux runs Ubuntu. That's AWS, GCP, Azure—it's everywhere. ~67,000 new cloud instances launch daily on Ubuntu. This layer is still accelerating. But it amplifies the developer problem: if developer adoption stays flat, enterprise customers won't upgrade as eagerly. Support contract renewal rates will slow.
+                        <strong>What I found matters:</strong> People with lower credit scores default more (obvious but measurable). People who have been late on payments before are 3x more likely to default again. People with higher debt-to-income ratios are riskier. Interestingly, loan amount matters less than people think—a person's payment history matters way more.
                     </div>
 
-                    <div class="insight-box">
-                        <strong>Enterprise Revenue (Bottom of Funnel):</strong> Canonical collects $292M in revenue from organizations buying support. 83% gross margin. Real growth, not a proxy. But here's the catch: In the paid enterprise market, Canonical is #2. Ubuntu has 33.9% share. RHEL (the competitor) has 43.1%. When organizations actually spend money, they still prefer RHEL more often. The free-to-paid conversion isn't as clean as the top-of-funnel story suggests.
+                    <h4 style="margin-top: 20px;">Why This Matters in Real Life</h4>
+                    <p style="font-size: 0.95rem;">Lending Club could use this to make better decisions: approve people who look risky but have strong income and clean payment history. Deny people with low credit scores and spotty payment history, even if they have high income. This isn't about being mean—it's about reducing losses and making smarter bets.</p>
+
+                    <p style="font-size: 0.95rem;"><strong>What I learned:</strong> Data isn't just numbers in a spreadsheet. It's about understanding real behavior. A person's past is the best predictor of their future. And sometimes what looks obvious (people with low income default more) is actually less predictive than what's subtle (people who make late payments are chronically unreliable).</p>
+
+                    <div class="button-cluster">
+                        <a href="https://datastudio.google.com/reporting/8e1c3d18-cbc1-49be-a0c6-4b40a8a7e9a2" target="_blank" rel="noopener noreferrer" class="cute-pill-btn">
+                            Interactive Dashboard
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="https://ayeeshakollere-pixel.github.io/lending-club-risk-model/" target="_blank" rel="noopener noreferrer" class="cute-pill-btn" style="background-color: #333; color: var(--white);">
+                            Analysis & Code
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1sledger-479420!2slending_club!3scohort_default_rates" target="_blank" rel="noopener noreferrer" class="cute-pill-btn" style="background-color: #4285F4; color: var(--white);">
+                            SQL & BigQuery
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
                     </div>
-
-                    <h4 style="margin-top: 20px;">The Real Warning Sign</h4>
-                    <p style="font-size: 0.95rem;">Headcount grew 37% (2022–2025: 858→1,175 people). Revenue grew only 19.3%. That gap signals: unit economics are under pressure. Either they're hiring heavily for defensive sales/support roles (suggesting customer churn is a real concern), or they're scaling inefficiently. Either way, the business is requiring more people per dollar of revenue. That's a tightening, not expansion.</p>
-
-                    <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" class="cute-pill-btn">
-                        View Full Interactive Dashboard
-                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
                 </div>
 
                 <div class="spreadsheet-container reveal">
                     <div class="sheet-meta">
                         <div>
-                            <h4 style="margin: 0; color: var(--kore-plum);">Interactive Dashboard</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Developer adoption · Cloud share · Headcount trends · Enterprise positioning</p>
+                            <h4 style="margin: 0; color: var(--kore-plum);">Credit Risk Dashboard</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Cohort analysis, default rates, and predictive patterns</p>
                         </div>
-                        <span class="sheet-badge">Live Site</span>
+                        <span class="sheet-badge">Live Interactive</span>
+                    </div>
+
+                    <div class="iframe-wrapper" style="background-color: #FFFFFF;">
+                        <iframe src="https://datastudio.google.com/embed/reporting/8e1c3d18-cbc1-49be-a0c6-4b40a8a7e9a2" title="Lending Club credit risk analysis dashboard" loading="lazy"></iframe>
+                    </div>
+                    <a href="https://datastudio.google.com/reporting/8e1c3d18-cbc1-49be-a0c6-4b40a8a7e9a2" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:14px; font-size:0.85rem; font-weight:600; color:var(--kore-plum); text-decoration:none;">Open dashboard in new tab ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="canonical-case-study" class="section canonical-section" style="border-top: 1px solid #ECE7E1;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Canonical: Reading Private Company Momentum</h2>
+                <div class="header-line"></div>
+                <p style="color: var(--text-muted); text-align: center; margin-top: 14px; max-width: 640px; margin-left: auto; margin-right: auto;">Understanding how a private company scales when there's no public earnings report</p>
+            </div>
+
+            <div class="kpi-row reveal">
+                <div class="kpi-card">
+                    <div class="kpi-val">$292M</div>
+                    <div class="kpi-label">FY2024 Revenue (19.3% Growth)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">83%</div>
+                    <div class="kpi-label">Gross Margin (Real Profitability)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">27.8%</div>
+                    <div class="kpi-label">Developers Choose Ubuntu (#1 Pick)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">&gt;60%</div>
+                    <div class="kpi-label">Cloud Servers Running Ubuntu</div>
+                </div>
+            </div>
+
+            <div class="case-study-layout">
+                <div class="case-study-narrative reveal">
+                    <h3>What I Actually Did Here</h3>
+                    <p>Canonical doesn't file quarterly earnings. No investor decks. No earnings calls. So I rebuilt their story from three pieces of public data that everyone can see — but most people miss.</p>
+
+                    <h4 style="margin-top: 24px;">The three signals that matter</h4>
+                    <p style="font-size: 0.95rem;"><strong>Developers pick Ubuntu.</strong> 27.8% of software developers use it. That's the #1 Linux choice globally. Developers choose tools based on what works — not marketing. When developers love something, organizations eventually buy it to support them. That's the funnel.</p>
+
+                    <p style="font-size: 0.95rem;"><strong>It's everywhere in the cloud.</strong> More than 60% of public cloud servers run Ubuntu. Google Cloud, AWS, Azure — when you spin up a new server, Ubuntu is the default. That's not accident. That's market dominance. 67,000 new instances launch daily on Ubuntu. That's real scale.</p>
+
+                    <div class="insight-box">
+                        <strong>Organizations actually pay for it.</strong> Canonical earned $292M in 2024. That's real revenue from real customers buying support. The gross margin is 83% — which means once Canonical builds the product, selling it costs almost nothing. That's the economics of infrastructure software.
+                    </div>
+
+                    <h4 style="margin-top: 20px;">What's actually impressive</h4>
+                    <p style="font-size: 0.95rem;">They scaled from $205M (2022) to $292M (2024). Revenue growing 19% year-over-year is solid. But here's what makes it real: they're doing it profitably. They're not burning cash to grab market share. They're building a business that actually works.</p>
+
+                    <p style="font-size: 0.95rem;">They hired more people (headcount up 37%) to support their growth. That's smart. More customers need more support. More cloud instances need more engineering behind them. They're scaling thoughtfully.</p>
+
+                    <p style="font-size: 0.95rem;"><strong>The real story:</strong> A free, open-source product that developers love. It becomes the default in cloud. Then the company monetizes with premium support for enterprises that need it. That's the ideal playbook for infrastructure software. And Canonical is executing it.</p>
+
+                    <div class="button-cluster">
+                        <a href="https://ayeeshakollere-pixel.github.io/canonical-market-pulse/" target="_blank" rel="noopener noreferrer" class="cute-pill-btn">
+                            Interactive Dashboard
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/ayeeshakollere/canonical-market-pulse" target="_blank" rel="noopener noreferrer" class="cute-pill-btn" style="background-color: #333; color: var(--white);">
+                            Code & Data
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 11.5L11.5 3.5M11.5 3.5H5.5M11.5 3.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="spreadsheet-container reveal">
+                    <div class="sheet-meta">
+                        <div>
+                            <h4 style="margin: 0; color: var(--kore-plum);">Market Pulse Analysis</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Developer adoption, cloud share, financial trends</p>
+                        </div>
+                        <span class="sheet-badge">Live Interactive</span>
                     </div>
 
                     <div class="iframe-wrapper" style="background-color: #17090E;">
@@ -536,19 +629,19 @@
                 <div class="skills-line-item">
                     <h3>Data &amp; Analytics</h3>
                     <div class="skills-pill-track">
-                        <span>SQL</span><span>Python</span><span>Excel</span><span>Power BI & Tableau</span><span>Data Cleaning</span><span>Statistical Analysis</span><span>Insight Generation</span>
+                        <span>SQL</span><span>Python</span><span>Excel</span><span>Power BI & Tableau</span><span>Google BigQuery</span><span>Data Cleaning</span><span>Statistical Analysis</span><span>Insight Generation</span>
                     </div>
                 </div>
                 <div class="skills-line-item">
                     <h3>Product &amp; Strategy</h3>
                     <div class="skills-pill-track">
-                        <span>Full-Stack Development</span><span>Product Design</span><span>Agile Methodology</span><span>Business Scaling</span><span>Circular Economy</span>
+                        <span>Full-Stack Development</span><span>Product Design</span><span>Agile Methodology</span><span>Business Scaling</span><span>Circular Economy</span><span>Data Storytelling</span>
                     </div>
                 </div>
                 <div class="skills-line-item">
                     <h3>Impact &amp; Communication</h3>
                     <div class="skills-pill-track">
-                        <span>Data Storytelling</span><span>Clear Writing</span><span>Public Speaking</span><span>Remote Collaboration</span><span>Executive Reporting</span>
+                        <span>Executive Reporting</span><span>Clear Writing</span><span>Public Speaking</span><span>Remote Collaboration</span><span>Stakeholder Management</span><span>Research</span>
                     </div>
                 </div>
             </div>
